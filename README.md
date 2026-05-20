@@ -1,6 +1,6 @@
 # Sharpa Wave Hand URDF USD and XML Files
 
-## Model Description
+## 🚀 Model Description
 
 1. URDF Files:
    - `src/left_sharpa_wave/left_sharpa_wave.urdf` for left hand.
@@ -33,7 +33,7 @@
    - `XXX_fingertip` frame: used for IK fingertip position annotation.  
    Please choose according to your needs.
 
-## Dynamics Parameter Description
+## 🔄 Dynamics Parameter Description
 
 ### Isaac Lab Dynamics
 1. The dynamics parameters for Isaac Lab have already been configured in the USD files. You can directly use `IdealPDActuator` with both `stiffness` and `damping` set to `None`. By default, these dynamics parameters are tuned to match `position mode`. If you use other control modes, additional retuning may be required.
@@ -43,7 +43,7 @@
 1. Currently, `armature`, `frictionloss`, `actuatorfrcrange`, and `damping` are set based on the calibration results from IsaacLab, which have been verified to be quite close to those of the real robot.   
 2. For rigid body collision parameters, everything is set to default except for the fingertip elastomer, which has a modified `solref` to make it softer and more elastic. Please contact lei.su@sharpa.com if you notice any issues.  
 
-## RViz Instructions
+## ▶️ RViz Instructions
 1. Install ROS2 and RViz2.  
 2. In the `SharpaWave_URDF_XML_USD` folder, run:  
 
