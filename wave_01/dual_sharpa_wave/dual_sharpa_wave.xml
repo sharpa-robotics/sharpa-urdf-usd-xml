@@ -1,5 +1,5 @@
 <mujoco model="dual_sharpa_wave">
-  <compiler angle="radian" meshdir=""/>
+  <compiler angle="radian" meshdir="../"/>
 
   <asset>
     <mesh name="left_hand_C_MC_visual" file="left_sharpa_wave/meshes/left_hand_C_MC_visual_.STL"/>
