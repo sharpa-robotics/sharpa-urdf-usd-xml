@@ -1,0 +1,17 @@
+<mujoco model="north_scene">
+  <include file="NTH-HA1.xml"/>
+  <visual>
+    <!-- <headlight diffuse="0.35 0.35 0.35" ambient="0.15 0.15 0.15" specular="0 0 0"/> -->
+  </visual>
+  <worldbody>
+    <!-- <light pos="3 -3 4.24" dir="-0.5 0.5 -0.707107" directional="true"
+           diffuse="0.35 0.35 0.35" ambient="0.08 0.08 0.08" specular="0 0 0"/> -->
+    <camera name="overview" pos="3 -3 2.2" xyaxes="0.707107 0.707107 0 -0.408248 0.408248 0.816497"/>
+    <geom name="ground" type="plane" size="10 10 0.1"
+          contype="4" conaffinity="0" friction="1.2 0.02 0.002"/>
+    <!-- Center support: 0.14 m tall, lifting all four wheels off the ground. -->
+    <!-- <geom name="chassis_support" type="cylinder" pos="0 0 0.07" size="0.10 0.07"
+          contype="1" conaffinity="1" friction="1.0 0.02 0.002"
+          rgba="0.35 0.35 0.38 1"/> -->
+  </worldbody>
+</mujoco>

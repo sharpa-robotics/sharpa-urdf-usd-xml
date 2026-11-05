@@ -1,0 +1,999 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="north">
+  <compiler angle="radian" />
+  <size nuser_jnt="1" />
+  <option solver="Newton" iterations="500" tolerance="1e-8" cone="elliptic" impratio="5" noslip_iterations="3" noslip_tolerance="1e-6">
+    <flag nativeccd="disable" />
+  </option>
+  <asset>
+    <mesh name="mesh_root_link" content_type="model/stl" file="../../../common/visual/root_link.STL" />
+    <mesh name="mesh_lower_body_base_link" content_type="model/stl" file="../../../common/visual/lower_body_base_link.STL" />
+    <mesh name="mesh_head_base_link" content_type="model/stl" file="../../../common/visual/head_base_link.STL" />
+    <mesh name="mesh_meshes__chassis_slider_link_1" content_type="model/stl" file="../../../common/visual/meshes__chassis_slider_link_1.STL" />
+    <mesh name="mesh_meshes__chassis_steer_link_1" content_type="model/stl" file="../visual/meshes__chassis_steer_link_1.STL" />
+    <mesh name="mesh_meshes__chassis_slider_link_2" content_type="model/stl" file="../../../common/visual/meshes__chassis_slider_link_2.STL" />
+    <mesh name="mesh_meshes__chassis_steer_link_2" content_type="model/stl" file="../visual/meshes__chassis_steer_link_2.STL" />
+    <mesh name="mesh_meshes__chassis_slider_link_3" content_type="model/stl" file="../../../common/visual/meshes__chassis_slider_link_3.STL" />
+    <mesh name="mesh_meshes__chassis_steer_link_3" content_type="model/stl" file="../visual/meshes__chassis_steer_link_3.STL" />
+    <mesh name="mesh_meshes__chassis_slider_link_4" content_type="model/stl" file="../../../common/visual/meshes__chassis_slider_link_4.STL" />
+    <mesh name="mesh_meshes__chassis_steer_link_4" content_type="model/stl" file="../visual/meshes__chassis_steer_link_4.STL" />
+    <mesh name="mesh_meshes__ultrasonic_link_3" content_type="model/stl" file="../../../common/visual/meshes__ultrasonic_link_3.STL" />
+    <mesh name="mesh_meshes__ultrasonic_link_4" content_type="model/stl" file="../../../common/visual/meshes__ultrasonic_link_4.STL" />
+    <mesh name="mesh_meshes_lower_body__lower_body_link_1" content_type="model/stl" file="../../../common/visual/meshes_lower_body__lower_body_link_1.STL" />
+    <mesh name="mesh_meshes_lower_body__lower_body_link_2" content_type="model/stl" file="../../../common/visual/meshes_lower_body__lower_body_link_2.STL" />
+    <mesh name="mesh_meshes_lower_body__lower_body_link_3" content_type="model/stl" file="../../../common/visual/meshes_lower_body__lower_body_link_3.STL" />
+    <mesh name="mesh_meshes_lower_body__lower_body_link_4" content_type="model/stl" file="../../../common/visual/meshes_lower_body__lower_body_link_4.STL" />
+    <mesh name="mesh_meshes_torso__torso_base_link" content_type="model/stl" file="../../../common/visual/meshes_torso__torso_base_link.STL" />
+    <mesh name="mesh_meshes_torso__torso_base_link002" content_type="model/stl" file="../../../common/visual/meshes_torso__torso_base_link002.stl" />
+    <mesh name="mesh_meshes_torso__torso_base_link003" content_type="model/stl" file="../../../common/visual/meshes_torso__torso_base_link003.stl" />
+    <mesh name="mesh_meshes_torso__torso_FTX_link" content_type="model/stl" file="../../../common/visual/meshes_torso__torso_FTX_link.STL" />
+    <mesh name="mesh_meshes_arm__right_arm_link_1" content_type="model/stl" file="../../../common/visual/meshes_arm__right_arm_link_1.STL" />
+    <mesh name="mesh_meshes_arm__right_arm_link_2" content_type="model/stl" file="../../../common/visual/meshes_arm__right_arm_link_2.STL" />
+    <mesh name="mesh_meshes_arm__right_arm_link_3" content_type="model/stl" file="../../../common/visual/meshes_arm__right_arm_link_3.STL" />
+    <mesh name="mesh_meshes_arm__right_arm_link_4" content_type="model/stl" file="../../../common/visual/meshes_arm__right_arm_link_4.STL" />
+    <mesh name="mesh_meshes_arm__right_arm_link_5" content_type="model/stl" file="../../../common/visual/meshes_arm__right_arm_link_5.STL" />
+    <mesh name="mesh_meshes_arm__right_arm_link_6" content_type="model/stl" file="../../../common/visual/meshes_arm__right_arm_link_6.STL" />
+    <mesh name="mesh_meshes_arm__right_arm_link_7" content_type="model/stl" file="../../../common/visual/meshes_arm__right_arm_link_7.STL" />
+    <mesh name="mesh_meshes_arm__arm_cam_link" content_type="model/stl" file="../../../common/visual/meshes_arm__arm_cam_link.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__right_hand_C_MC_visual" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__right_hand_C_MC_visual.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__right_thumb_CMC_VL_visual" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__right_thumb_CMC_VL_visual.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__right_thumb_MC_visual" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__right_thumb_MC_visual.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__right_thumb_MCP_VL_visual" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__right_thumb_MCP_VL_visual.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__right_thumb_PP_visual" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__right_thumb_PP_visual.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__DP_Visual_HB1_TH" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__DP_Visual_HB1_TH.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__elastomer_HB1_TH" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__elastomer_HB1_TH.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__right_MCP_VL_visual" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__right_MCP_VL_visual.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__right_PP_visual" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__right_PP_visual.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__right_MP_visual" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__right_MP_visual.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__DP_visual_HB1_4F" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__DP_visual_HB1_4F.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__elastomer_HB1_4F" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__elastomer_HB1_4F.STL" />
+    <mesh name="mesh_meshes_right_sharpa_wave__right_pinky_MC_visual" content_type="model/stl" file="../../../common/visual/meshes_right_sharpa_wave__right_pinky_MC_visual.STL" />
+    <mesh name="mesh_meshes_arm__left_arm_link_2" content_type="model/stl" file="../../../common/visual/meshes_arm__left_arm_link_2.STL" />
+    <mesh name="mesh_meshes_arm__left_arm_link_3" content_type="model/stl" file="../../../common/visual/meshes_arm__left_arm_link_3.STL" />
+    <mesh name="mesh_meshes_arm__left_arm_link_4" content_type="model/stl" file="../../../common/visual/meshes_arm__left_arm_link_4.STL" />
+    <mesh name="mesh_meshes_arm__left_arm_link_5" content_type="model/stl" file="../../../common/visual/meshes_arm__left_arm_link_5.STL" />
+    <mesh name="mesh_meshes_arm__left_arm_link_6" content_type="model/stl" file="../../../common/visual/meshes_arm__left_arm_link_6.STL" />
+    <mesh name="mesh_meshes_arm__left_arm_link_7" content_type="model/stl" file="../../../common/visual/meshes_arm__left_arm_link_7.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__left_hand_C_MC_visual" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__left_hand_C_MC_visual.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__left_thumb_CMC_VL" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__left_thumb_CMC_VL.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__left_thumb_MC_visual" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__left_thumb_MC_visual.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__left_thumb_MCP_VL_visual" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__left_thumb_MCP_VL_visual.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__left_thumb_PP_visual" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__left_thumb_PP_visual.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__DP_Visual_HB1_TH" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__DP_Visual_HB1_TH.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__elastomer_HB1_TH" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__elastomer_HB1_TH.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__left_MCP_VL_visual" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__left_MCP_VL_visual.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__left_PP_visual" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__left_PP_visual.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__left_MP_visual" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__left_MP_visual.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__DP_visual_HB1_4F" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__DP_visual_HB1_4F.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__elastomer_HB1_4F" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__elastomer_HB1_4F.STL" />
+    <mesh name="mesh_meshes_left_sharpa_wave__left_pinky_MC_visual" content_type="model/stl" file="../../../common/visual/meshes_left_sharpa_wave__left_pinky_MC_visual.STL" />
+    <mesh name="mesh_meshes_head__neck_link_1" content_type="model/stl" file="../../../common/visual/meshes_head__neck_link_1.STL" />
+    <mesh name="mesh_meshes_head__neck_link_2" content_type="model/stl" file="../../../common/visual/meshes_head__neck_link_2.STL" />
+    <mesh name="mesh_meshes_head__neck_link_3" content_type="model/stl" file="../../../common/visual/meshes_head__neck_link_3.STL" />
+    <mesh name="head_visual_01_stl" content_type="model/stl" file="../../../common/visual/head_visual_01.stl" smoothnormal="true" />
+    <mesh name="head_visual_02_stl" content_type="model/stl" file="../../../common/visual/head_visual_02.stl" smoothnormal="true" />
+    <mesh name="head_visual_03_stl" content_type="model/stl" file="../../../common/visual/head_visual_03.stl" smoothnormal="true" />
+    <mesh name="head_visual_04_stl" content_type="model/stl" file="../../../common/visual/head_visual_04.stl" smoothnormal="true" />
+    <mesh name="head_visual_05_stl" content_type="model/stl" file="../../../common/visual/head_visual_05.stl" smoothnormal="true" />
+    <mesh name="head_visual_06_stl" content_type="model/stl" file="../../../common/visual/head_visual_06.stl" smoothnormal="true" />
+    <mesh name="head_visual_07_stl" content_type="model/stl" file="../../../common/visual/head_visual_07.stl" smoothnormal="true" />
+    <mesh name="mesh_meshes_head__head_cam_sensor" content_type="model/stl" file="../../../common/visual/meshes_head__head_cam_sensor.STL" />
+    <mesh name="visual_old_mesh_meshes__chassis_wheel_link_1" content_type="model/stl" file="../visual/wheel_tire_visual_01.stl" />
+    <mesh name="visual_old_mesh_meshes__chassis_wheel_link_2" content_type="model/stl" file="../visual/wheel_tire_visual_02.stl" />
+    <mesh name="visual_old_mesh_meshes__chassis_wheel_link_3" content_type="model/stl" file="../visual/wheel_tire_visual_03.stl" />
+    <mesh name="visual_old_mesh_meshes__chassis_wheel_link_4" content_type="model/stl" file="../visual/wheel_tire_visual_04.stl" />
+  </asset>
+  <worldbody>
+    <body name="north" pos="0 0 0.002">
+      <freejoint name="north_freejoint" />
+      <inertial pos="-0.0100930017224 0.000409919746629 0.169992610883" mass="39.4760814491" fullinertia="0.498930861864 0.57240519404 0.807883574637 -0.0117090054098 0.0474451232271 0.000801383985685" />
+      <geom pos="0.0065 0 0" type="mesh" rgba="1 1 1 1" mesh="mesh_root_link" contype="0" conaffinity="0" name="visual_g000" />
+      <geom pos="-0.26599 -0.081119 0.133" quat="0.0738962 0.703234 0.0738964 -0.703236" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes__ultrasonic_link_3" name="visual_g001" />
+      <geom pos="-0.26599 0.081119 0.133" quat="0.0738962 0.703234 0.0738964 -0.703236" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes__ultrasonic_link_4" name="visual_g003" />
+      <geom pos="-0.135677 0 0.375099" quat="0.5 -0.5 -0.5 -0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_lower_body_base_link" name="visual_g005" />
+      <body name="chassis_slider_link_1" pos="0.195 0.1785 0.221" quat="0.707105 -0.707108 0 0">
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes__chassis_slider_link_1" name="visual_g009" />
+        <inertial pos="-0.00025 0.09981 -0.03875" mass="2.72" fullinertia="0.02603256 0.01647597 0.01627706 -1.839e-05 -1.693e-05 0.00077004" />
+        <joint name="chassis_slider_joint_1" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.06" actuatorfrcrange="-150 150" limited="true" actuatorfrclimited="true" damping="8" armature="0.05" frictionloss="2" user="0.05" />
+        <body name="chassis_steer_link_1" quat="0.707105 -0.707108 0 0">
+          <inertial pos="0.00025 0.01503 0.12768" quat="0.991587 -0.128886 -0.0114702 0.0033582" mass="2.2" diaginertia="0.00634124 0.00583321 0.00441852" />
+          <joint name="chassis_steer_joint_1" pos="0 0 0" axis="0 0 1" range="-2.93 2.93" actuatorfrcrange="-13.5 13.5" limited="true" actuatorfrclimited="true" damping="2.0" armature="0.001377" user="34.56" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.867 0.89 1" mesh="mesh_meshes__chassis_steer_link_1" name="visual_g010" />
+          <body name="chassis_wheel_link_1" pos="0 0 0.156" quat="0.707105 0.707108 0 0">
+            <inertial pos="0 0 0.0049" quat="0.12288 0.696348 -0.12288 0.696348" mass="0.8" diaginertia="0.00169653 0.000929826 0.000929174" />
+            <joint name="chassis_wheel_joint_1" pos="0 0 0" axis="0 0 1" damping="0.03" frictionloss="0.15" armature="0.0087" actuatorfrcrange="-9 9" user="29.23" />
+            <geom type="mesh" contype="0" conaffinity="0" group="2" density="0" rgba="0.867 0.867 0.89 1" mesh="visual_old_mesh_meshes__chassis_wheel_link_1" name="chassis_wheel_link_1_old_visual_01" />
+            <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="visual_old_mesh_meshes__chassis_wheel_link_1" name="chassis_wheel_link_1_old_visual_01_collision" contype="0" conaffinity="4101" condim="4" friction="1.2 0.002 0.002" solref="0.01 1" priority="1" />
+          </body>
+          <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes__chassis_steer_link_1" name="visual_g010_collision" contype="1" conaffinity="4097" />
+        </body>
+        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes__chassis_slider_link_1" name="visual_g009_collision" contype="1" conaffinity="4097" />
+      </body>
+      <body name="chassis_slider_link_2" pos="0.195 -0.1785 0.221" quat="0.707105 0.707108 0 0">
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes__chassis_slider_link_2" name="visual_g017" />
+        <inertial pos="-0.00022 -0.08523 -0.02936" mass="2.52" fullinertia="0.02726237 0.01648401 0.01749083 2.292e-05 -2.554e-05 0.00416337" />
+        <joint name="chassis_slider_joint_2" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.06" actuatorfrcrange="-150 150" limited="true" actuatorfrclimited="true" damping="8" armature="0.05" frictionloss="2" user="0.05" />
+        <body name="chassis_steer_link_2" quat="0.707105 0.707108 0 0">
+          <inertial pos="0.00025 0.01503 0.12768" quat="0.991587 -0.128886 -0.0114702 0.0033582" mass="2.2" diaginertia="0.00634124 0.00583321 0.00441852" />
+          <joint name="chassis_steer_joint_2" pos="0 0 0" axis="0 0 1" range="-2.93 2.93" actuatorfrcrange="-13.5 13.5" limited="true" actuatorfrclimited="true" damping="2.0" armature="0.001377" user="34.56" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.867 0.89 1" mesh="mesh_meshes__chassis_steer_link_2" name="visual_g018" />
+          <body name="chassis_wheel_link_2" pos="0 0 0.156" quat="0.707105 0.707108 0 0">
+            <inertial pos="0 0 0.0049" quat="0.12288 0.696348 -0.12288 0.696348" mass="0.8" diaginertia="0.00169653 0.000929826 0.000929174" />
+            <joint name="chassis_wheel_joint_2" pos="0 0 0" axis="0 0 1" damping="0.03" frictionloss="0.15" armature="0.0087" actuatorfrcrange="-9 9" user="29.23" />
+            <geom type="mesh" contype="0" conaffinity="0" group="2" density="0" rgba="0.867 0.867 0.89 1" mesh="visual_old_mesh_meshes__chassis_wheel_link_2" name="chassis_wheel_link_2_old_visual_01" />
+            <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="visual_old_mesh_meshes__chassis_wheel_link_2" name="chassis_wheel_link_2_old_visual_01_collision" contype="0" conaffinity="4101" condim="4" friction="1.2 0.002 0.002" solref="0.01 1" priority="1" />
+          </body>
+          <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes__chassis_steer_link_2" name="visual_g018_collision" contype="1" conaffinity="4097" />
+        </body>
+        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes__chassis_slider_link_2" name="visual_g017_collision" contype="1" conaffinity="4097" />
+      </body>
+      <body name="chassis_slider_link_3" pos="-0.195 -0.1785 0.221" quat="0.707105 0.707108 0 0">
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes__chassis_slider_link_3" name="visual_g025" />
+        <inertial pos="-1e-05 -0.09957 -0.03452" mass="2.73" fullinertia="0.02693801 0.01734887 0.01636799 3.207e-05 2.444e-05 -0.00068271" />
+        <joint name="chassis_slider_joint_3" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.06" actuatorfrcrange="-150 150" limited="true" actuatorfrclimited="true" damping="8" armature="0.05" frictionloss="2" user="0.05" />
+        <body name="chassis_steer_link_3" quat="0.707105 0.707108 0 0">
+          <inertial pos="0.00025 0.01503 0.12768" quat="0.991587 -0.128886 -0.0114702 0.0033582" mass="2.2" diaginertia="0.00634124 0.00583321 0.00441852" />
+          <joint name="chassis_steer_joint_3" pos="0 0 0" axis="0 0 1" range="-2.93 2.93" actuatorfrcrange="-13.5 13.5" limited="true" actuatorfrclimited="true" damping="2.0" armature="0.001377" user="34.56" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.867 0.89 1" mesh="mesh_meshes__chassis_steer_link_3" name="visual_g026" />
+          <body name="chassis_wheel_link_3" pos="0 0 0.156" quat="0.707105 0.707108 0 0">
+            <inertial pos="0 0 0.0049" quat="0.12288 0.696348 -0.12288 0.696348" mass="0.8" diaginertia="0.00169653 0.000929826 0.000929174" />
+            <joint name="chassis_wheel_joint_3" pos="0 0 0" axis="0 0 1" damping="0.03" frictionloss="0.15" armature="0.0087" actuatorfrcrange="-9 9" user="29.23" />
+            <geom type="mesh" contype="0" conaffinity="0" group="2" density="0" rgba="0.867 0.867 0.89 1" mesh="visual_old_mesh_meshes__chassis_wheel_link_3" name="chassis_wheel_link_3_old_visual_01" />
+            <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="visual_old_mesh_meshes__chassis_wheel_link_3" name="chassis_wheel_link_3_old_visual_01_collision" contype="0" conaffinity="4101" condim="4" friction="1.2 0.002 0.002" solref="0.01 1" priority="1" />
+          </body>
+          <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes__chassis_steer_link_3" name="visual_g026_collision" contype="1" conaffinity="4097" />
+        </body>
+        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes__chassis_slider_link_3" name="visual_g025_collision" contype="1" conaffinity="4097" />
+      </body>
+      <body name="chassis_slider_link_4" pos="-0.195 0.1785 0.221" quat="0.707105 -0.707108 0 0">
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes__chassis_slider_link_4" name="visual_g033" />
+        <inertial pos="-6e-05 0.08505 -0.03326" mass="2.54" fullinertia="0.0266934 0.01589908 0.01756517 -1.699e-05 2.705e-05 -0.00384025" />
+        <joint name="chassis_slider_joint_4" pos="0 0 0" axis="0 0 1" type="slide" range="0 0.06" actuatorfrcrange="-150 150" limited="true" actuatorfrclimited="true" damping="8" armature="0.05" frictionloss="2" user="0.05" />
+        <body name="chassis_steer_link_4" quat="0.707105 -0.707108 0 0">
+          <inertial pos="0.00025 0.01503 0.12768" quat="0.991587 -0.128886 -0.0114702 0.0033582" mass="2.2" diaginertia="0.00634124 0.00583321 0.00441852" />
+          <joint name="chassis_steer_joint_4" pos="0 0 0" axis="0 0 1" range="-2.93 2.93" actuatorfrcrange="-13.5 13.5" limited="true" actuatorfrclimited="true" damping="2.0" armature="0.001377" user="34.56" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.867 0.89 1" mesh="mesh_meshes__chassis_steer_link_4" name="visual_g034" />
+          <body name="chassis_wheel_link_4" pos="0 0 0.156" quat="0.707105 0.707108 0 0">
+            <inertial pos="0 0 0.0049" quat="0.12288 0.696348 -0.12288 0.696348" mass="0.8" diaginertia="0.00169653 0.000929826 0.000929174" />
+            <joint name="chassis_wheel_joint_4" pos="0 0 0" axis="0 0 1" damping="0.03" frictionloss="0.15" armature="0.0087" actuatorfrcrange="-9 9" user="29.23" />
+            <geom type="mesh" contype="0" conaffinity="0" group="2" density="0" rgba="0.867 0.867 0.89 1" mesh="visual_old_mesh_meshes__chassis_wheel_link_4" name="chassis_wheel_link_4_old_visual_01" />
+            <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="visual_old_mesh_meshes__chassis_wheel_link_4" name="chassis_wheel_link_4_old_visual_01_collision" contype="0" conaffinity="4101" condim="4" friction="1.2 0.002 0.002" solref="0.01 1" priority="1" />
+          </body>
+          <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes__chassis_steer_link_4" name="visual_g034_collision" contype="1" conaffinity="4097" />
+        </body>
+        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes__chassis_slider_link_4" name="visual_g033_collision" contype="1" conaffinity="4097" />
+      </body>
+      <body gravcomp="1" name="JT16_steer_link" pos="0.275 0 0.12463" quat="-3.67321e-06 -1 0 0">
+        <inertial pos="-0.031167 -0.0358774 -0.0167363" quat="0.52991 0.756803 -0.313475 -0.219494" mass="0.0936406" diaginertia="1.34307e-05 1.34307e-05 9.30373e-06" />
+        <joint name="JT16_steer_joint" pos="0 0 0" axis="0 0 1" range="0 6.2832" limited="true" user="0" />
+      </body>
+      <body gravcomp="0" name="lower_body_link_1" pos="-0.135677 0 0.375099" quat="0.5 -0.5 -0.5 -0.5">
+        <inertial pos="0.09421 0.04123 -0.00106" mass="5.84448" fullinertia="0.02355597309 0.09079381878 0.08977277158 0.01867160355 0.00312971746 0.00061664019" />
+        <joint name="lower_body_joint_1" pos="0 0 0" axis="0 0 1" range="0 1.4835" actuatorfrcrange="-280 280" limited="true" actuatorfrclimited="true" damping="17.395" armature="4.4675" frictionloss="8.7751" user="1.88" />
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes_lower_body__lower_body_link_1" name="visual_g041" />
+        <body gravcomp="0" name="lower_body_link_2" pos="0.319 0.078 0">
+          <inertial pos="0.18558 0.00586 -0.00163" mass="10.78547" fullinertia="0.05758273209 0.26579232666 0.22910930963 -0.00295623496 0.00263048054 -4.388887e-05" />
+          <joint name="lower_body_joint_2" pos="0 0 0" axis="0 0 1" range="-2.4435 0" actuatorfrcrange="-280 280" limited="true" actuatorfrclimited="true" damping="18.412" armature="0.79136" frictionloss="7.9944" user="1.88" />
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes_lower_body__lower_body_link_2" name="visual_g042" />
+          <body gravcomp="0" name="lower_body_link_3" pos="0.34878 0.003935 0">
+            <inertial pos="0.02366 -0.00428 -1e-05" quat="-0.0282849 0.706487 0.0290664 0.706563" mass="2.65149" diaginertia="0.00738211 0.005493 0.00429384" />
+            <joint name="lower_body_joint_3" pos="0 0 0" axis="0 0 1" range="-0.5236 2.0944" actuatorfrcrange="-250.5 250.5" limited="true" actuatorfrclimited="true" damping="0.80973" frictionloss="0.22260" user="1.88" />
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.596 0.667 0.686 1" mesh="mesh_meshes_lower_body__lower_body_link_3" name="visual_g043" />
+            <body gravcomp="0" name="lower_body_link_4" pos="0.1025 0 0" quat="-0.500004 0.499998 0.500002 0.499996">
+              <inertial pos="-0.00017 0.04159 0.00029" quat="0.681758 0.729792 0.0380927 -0.0340403" mass="2.10291" diaginertia="0.00330841 0.00327728 0.00313091" />
+              <joint name="lower_body_joint_4" pos="0 0 0" axis="0 0 1" range="-0.5236 0.5236" actuatorfrcrange="-250.5 250.5" limited="true" actuatorfrclimited="true" damping="5.6123" frictionloss="3.8011" user="1.88" />
+              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.867 0.89 1" mesh="mesh_meshes_lower_body__lower_body_link_4" name="visual_g044" />
+              <body gravcomp="0" name="lower_body_link_5" pos="0 0 0" quat="0.707105 -0.707108 0 0">
+                <inertial pos="-1.9951123716e-05 0.0243585695128 0.220552338287" mass="7.6348301" fullinertia="0.0880870603062 0.0854943756805 0.0510581752642 5.35113597041e-05 -0.000139319812462 0.00498857948819" />
+                <joint name="lower_body_joint_5" pos="0 0 0" axis="0 0 1" range="-3.1416 3.1416" actuatorfrcrange="-167 167" limited="true" actuatorfrclimited="true" damping="0.13172" armature="0.41846" frictionloss="0.20794" user="1.88" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes_torso__torso_base_link" pos="-0.000000590 -0.061564901 -1.147386522" quat="0.707106781 -0.000004157 -0.000001328 -0.707106781" name="visual_g045" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes_torso__torso_base_link002" pos="-0.000000590 -0.061564901 -1.147386522" quat="0.707106781 -0.000004157 -0.000001328 -0.707106781" name="visual_g046" />
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes_torso__torso_base_link003" pos="-0.000004590 -0.057750901 -1.147378583" quat="0.707106781 -0.000004157 -0.000001328 -0.707106781" name="visual_g047" />
+                <geom pos="-0.0126496 0.1171 0.22518" quat="0.459227 -0.537688 -0.459231 0.537688" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes_torso__torso_FTX_link" name="visual_g048" />
+                <geom pos="8.81569e-08 0.024 0.3248" quat="0.707105 0 0 -0.707108" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.753 0.753 0.753 1" mesh="mesh_head_base_link" name="visual_g049" />
+                <body gravcomp="0" name="left_arm_link_1" pos="0.1543 0.0359994 0.2648" quat="0.707105 0 -0.707108 0">
+                  <inertial pos="0.00088 0.00219 0.01059" quat="0.688853 -0.0357846 -0.0239507 0.723621" mass="1.52699" diaginertia="0.00234551 0.00218025 0.00173852" />
+                  <joint name="left_arm_joint_1" pos="0 0 0" axis="0 0 1" range="-1.5708 4.1888" actuatorfrcrange="-100 100" limited="true" actuatorfrclimited="true" damping="0.010524" armature="0.14535" frictionloss="1.5084" user="8.3776" />
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes_arm__right_arm_link_1" quat="-3.67321e-06 1 0 0" name="visual_g050" />
+                  <body gravcomp="0" name="left_arm_link_2" quat="0.499998 -0.500002 0.5 0.5">
+                    <inertial pos="0.00959 0.01941 -0.00409" quat="0.925837 -0.0741986 0.0513587 0.366992" mass="0.55904" diaginertia="0.00132732 0.00102197 0.000830338" />
+                    <joint name="left_arm_joint_2" pos="0 0 0" axis="0 0 1" range="-2.0944 0.3491" actuatorfrcrange="-100 100" limited="true" actuatorfrclimited="true" damping="0.71974" armature="0.066392" frictionloss="0.13643" user="8.3776" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes_arm__left_arm_link_2" name="visual_g051" />
+                    <body gravcomp="0" name="left_arm_link_3" pos="0.02 0.29135 0" quat="0.499998 -0.5 -0.5 -0.500002">
+                      <inertial pos="-0.00198 1e-05 -0.13229" mass="1.75279" fullinertia="0.01055354108 0.01071054083 0.00138493739 -1.50781e-06 -0.00042435788 -2.503992e-05" />
+                      <joint name="left_arm_joint_3" pos="0 0 0" axis="0 0 1" range="-1.2217 4.3633" actuatorfrcrange="-49 49" limited="true" actuatorfrclimited="true" damping="0.38702" armature="0.063400" frictionloss="0.0070006" user="8.3776" />
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.867 0.89 1" mesh="mesh_meshes_arm__left_arm_link_3" name="visual_g052" />
+                      <body gravcomp="0" name="left_arm_link_4" pos="-0.0192 0 0" quat="0.707105 0.707108 0 0">
+                        <inertial pos="-0.00014 0.0106 0.00035" quat="0.695511 0.703467 -0.0881625 0.116732" mass="0.23456" diaginertia="0.00027845 0.000275322 0.000189542" />
+                        <joint name="left_arm_joint_4" pos="0 0 0" axis="0 0 1" range="-0.1745 2.2689" actuatorfrcrange="-59.06 59.06" limited="true" actuatorfrclimited="true" damping="0.02" armature="0.044461" frictionloss="0.5" user="11.3935" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.867 0.89 1" mesh="mesh_meshes_arm__left_arm_link_4" name="visual_g053" />
+                        <body gravcomp="0" name="left_arm_link_5" pos="0 0.24315 0" quat="0.5 -0.5 0.5 0.5">
+                          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_arm__left_arm_link_5" name="visual_g054" />
+                          <inertial pos="-0.00061 0.00029 -0.1057" quat="0.60737 0.00718137 0.00393139 0.794377" mass="1.09227" diaginertia="0.00764567 0.00747167 0.00118692" />
+                          <joint name="left_arm_joint_5" pos="0 0 0" axis="0 0 1" range="-1.5708 2.618" actuatorfrcrange="-29.53 29.53" limited="true" actuatorfrclimited="true" damping="0.18" armature="0.0022987" frictionloss="0.1" user="22.787" />
+                          <body gravcomp="0" name="left_arm_link_6" quat="0.499998 0.5 -0.5 0.500002">
+                            <inertial pos="-7e-05 -0.00578 0.00017" quat="0.999937 0.0107985 0.00283594 0.000667885" mass="0.09831" diaginertia="4.52362e-05 3.80256e-05 2.24888e-05" />
+                            <joint name="left_arm_joint_6" pos="0 0 0" axis="0 0 1" range="-1.0472 1.5708" actuatorfrcrange="-25.2 25.2" limited="true" actuatorfrclimited="true" damping="0.02" armature="0.0014165" frictionloss="0.02" user="26.7035" />
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.91 1 1" mesh="mesh_meshes_arm__left_arm_link_6" name="visual_g055" />
+                            <body gravcomp="0" name="left_arm_link_7" quat="0.707105 -0.707108 0 0">
+                              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.91 1 1" mesh="mesh_meshes_arm__left_arm_link_7" name="visual_g056" />
+                              <geom pos="0.0612781 -0.025992 0.0365818" quat="0.7398441931678 -0.392284988387712 0.437714944360966 -0.327335737744316" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.75 0.75 0.75 1" mesh="mesh_meshes_arm__arm_cam_link" name="visual_g057" />
+                              <inertial pos="0.04377 -0.01778 0.01623" mass="0.24593" fullinertia="0.00021608576 0.00020714048 0.00016643629 -0.00001828916 0.00005531968 -0.00006743931" />
+                              <joint name="left_arm_joint_7" pos="0 0 0" axis="0 0 1" range="-0.8727 0.8727" actuatorfrcrange="-25.2 25.2" limited="true" actuatorfrclimited="true" damping="0.16" armature="0.019" frictionloss="0.17095" user="26.7035" />
+                              <body name="left_hand_mount" pos="0.003 0 0" gravcomp="0">
+                                <inertial pos="0.0921099526878 0.00536029466431 -0.00216014733224" mass="0.6506" fullinertia="0.000294754499802 0.000793352446222 0.000674245053976 -0.00010575265374 -7.34662440184e-06 2.4983344665e-06" />
+                                <geom pos="0.052 0 0" quat="-2.59734e-06 0.707108 2.59735e-06 0.707105" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_hand_C_MC_visual" name="visual_g058" />
+                                <body name="left_thumb_CMC_VL" pos="0.0733998 0.0260002 0.00999992" quat="0.499998 0.499998 0.500004 0.5" gravcomp="0">
+                                  <inertial pos="-0.00065 -0.0002 0" mass="0.0025" fullinertia="2.08e-07 1.39e-07 2.6e-07 -1.853e-08 0 0" />
+                                  <joint name="left_thumb_CMC_FE" pos="0 0 0" axis="0 0 1" range="-0.1745 1.9199" actuatorfrcrange="-3.3 3.3" limited="true" actuatorfrclimited="true" frictionloss="0.132" armature="0.0032" actuatorgravcomp="false" damping="4.20E-05" user="11.84076833" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_thumb_CMC_VL" friction="1 1 1" condim="4" name="visual_g060" />
+                                  <body name="left_thumb_MC" pos="0 -0.005 0" quat="0.65328 0.653282 -0.270598 0.270599" gravcomp="0">
+                                    <inertial pos="0.03643 -0.01024 -0.00517" mass="0.13587" fullinertia="1.922e-05 4.3621e-05 4.6191e-05 -1.981e-08 -5.1687e-07 1.534e-06" />
+                                    <joint name="left_thumb_CMC_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-3.3 3.3" limited="true" actuatorfrclimited="true" frictionloss="0.132" armature="0.0032" actuatorgravcomp="false" damping="4.20E-05" user="11.84076833" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_thumb_MC_visual" friction="1 1 1" condim="4" name="visual_g061" />
+                                    <body name="left_thumb_MCP_VL" pos="0.065 -0.006 -0.010392" quat="0.965926 -0.25882 0 0" gravcomp="0">
+                                      <inertial pos="-1.29e-09 1.1e-10 0" mass="8e-05" fullinertia="6.4e-08 3.8e-08 7.9e-08 1.61e-09 0 0" />
+                                      <joint name="left_thumb_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.5236 1.3963" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_thumb_MCP_VL_visual" friction="1 1 1" condim="4" name="visual_g063" />
+                                      <body name="left_thumb_PP" quat="0.707105 0.707108 0 0" gravcomp="0">
+                                        <inertial pos="0.021256 -0.00095 0.00092" mass="0.03078" fullinertia="1.255e-06 6.047e-06 5.915e-06 -4e-07 4.267e-08 -2.004e-08" />
+                                        <joint name="left_thumb_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_thumb_PP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g064" />
+                                        <body name="left_thumb_DP" pos="0.039 0 0" quat="0.707105 -0.707108 0 0" gravcomp="0">
+                                          <inertial pos="0.00823857438479 -0.00178178539225 -0.000999779581204" mass="0.009981" fullinertia="3.15147916099e-07 1.04543219234e-06 1.06649413341e-06 -1.01151926859e-07 7.1752529929e-08 -1.41817599279e-08" />
+                                          <joint name="left_thumb_IP" pos="0 0 0" axis="0 0 1" range="0 1.7453" actuatorfrcrange="-0.638 0.638" limited="true" actuatorfrclimited="true" frictionloss="0.01276" armature="0.0006" actuatorgravcomp="false" damping="4.06E-06" user="11.61831603" />
+                                          <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__DP_Visual_HB1_TH" friction="0.4 0.05 0.001" condim="4" name="visual_g066" />
+                                          <geom quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 1 0.2 1" mesh="mesh_meshes_left_sharpa_wave__elastomer_HB1_TH" name="visual_g068" />
+                                          <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__DP_Visual_HB1_TH" name="visual_g066_collision" contype="4" conaffinity="8185" condim="4" friction="1 1 1" />
+                                          <geom quat="0.5 0.5 -0.5 0.5" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__elastomer_HB1_TH" name="visual_g068_collision" contype="4" conaffinity="8185" condim="3" friction="1 0.1 0.01" solref="0.03 1" solimp="0.7 0.95 0.003 0.5 2" />
+                                        </body>
+                                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_thumb_PP_visual" name="visual_g064_collision" contype="4" conaffinity="8185" condim="4" friction="1 1 1" />
+                                      </body>
+                                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_thumb_MCP_VL_visual" name="visual_g063_collision" contype="4" conaffinity="8185" condim="4" friction="1 1 1" />
+                                    </body>
+                                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_thumb_MC_visual" name="visual_g061_collision" contype="4" conaffinity="8185" condim="4" friction="1 1 1" />
+                                  </body>
+                                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_thumb_CMC_VL" name="visual_g060_collision" contype="1" conaffinity="4097" />
+                                </body>
+                                <body name="left_index_MCP_VL" pos="0.1479 0.0303007 0.000999648" quat="0.707108 0.707105 2.59734e-06 9.54059e-12" gravcomp="0">
+                                  <inertial pos="-0.0092 -0.0013 0" mass="0.00221" fullinertia="1.77e-07 1.104e-07 2.23e-07 5.4e-09 0 0" />
+                                  <joint name="left_index_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_MCP_VL_visual" friction="1 1 1" condim="4" name="visual_g070" />
+                                  <body name="left_index_PP" quat="0.707105 0.707108 0 0" gravcomp="0">
+                                    <inertial pos="0.027 -0.00055 -0.00068" mass="0.04741" fullinertia="2.168e-06 1.1394e-05 1.1045e-05 -3.29e-07 -1.34e-07 -1.608e-08" />
+                                    <joint name="left_index_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_PP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g072" />
+                                    <body name="left_index_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0" gravcomp="0">
+                                      <inertial pos="0.01212 -0.00116 0.00058" mass="0.01824" fullinertia="5.77e-07 1.923e-06 1.9986e-06 -1.835e-08 1.0615e-07 -4.01e-09" />
+                                      <joint name="left_index_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" actuatorfrcrange="-0.638 0.638" limited="true" actuatorfrclimited="true" frictionloss="0.01276" armature="0.0006" actuatorgravcomp="false" damping="4.06E-06" user="11.61831603" />
+                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_MP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g074" />
+                                      <body name="left_index_DP" pos="0.0315 0 0" gravcomp="0">
+                                        <inertial pos="0.0124884990878 -0.00257288755106 -0.000107611266394" mass="0.004651" fullinertia="1.35086631681e-07 3.09867660405e-07 3.14999900964e-07 1.76891566567e-09 6.10588620655e-09 -8.98584780692e-10" />
+                                        <joint name="left_index_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" actuatorfrcrange="-0.189369 0.189369" limited="true" actuatorfrclimited="true" frictionloss="0.00378738" armature="0.00042" actuatorgravcomp="false" damping="1.21E-06" user="14.66594768" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__DP_visual_HB1_4F" friction="0.4 0.05 0.001" condim="4" name="visual_g076" />
+                                        <geom quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 1 0.2 1" mesh="mesh_meshes_left_sharpa_wave__elastomer_HB1_4F" name="visual_g078" />
+                                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__DP_visual_HB1_4F" name="visual_g076_collision" contype="8" conaffinity="8181" condim="4" friction="1 1 1" />
+                                        <geom quat="0.5 0.5 -0.5 0.5" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__elastomer_HB1_4F" name="visual_g078_collision" contype="8" conaffinity="8181" condim="3" friction="1 0.1 0.01" solref="0.03 1" solimp="0.7 0.95 0.003 0.5 2" />
+                                      </body>
+                                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_MP_visual" name="visual_g074_collision" contype="8" conaffinity="8181" condim="4" friction="1 1 1" />
+                                    </body>
+                                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_PP_visual" name="visual_g072_collision" contype="8" conaffinity="8181" condim="4" friction="1 1 1" />
+                                  </body>
+                                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_MCP_VL_visual" name="visual_g070_collision" contype="8" conaffinity="8181" condim="4" friction="1 1 1" />
+                                </body>
+                                <body name="left_middle_MCP_VL" pos="0.1509 0.0100007 -3.6328e-07" quat="0.707108 0.707105 2.59734e-06 9.54059e-12" gravcomp="0">
+                                  <inertial pos="-0.0092 -0.0013 0" mass="0.00221" fullinertia="1.77e-07 1.104e-07 2.23e-07 5.4e-09 0 0" />
+                                  <joint name="left_middle_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_MCP_VL_visual" friction="1 1 1" condim="4" name="visual_g080" />
+                                  <body name="left_middle_PP" quat="0.707105 0.707108 0 0" gravcomp="0">
+                                    <inertial pos="0.027 -0.00055 -0.00068" mass="0.04741" fullinertia="2.168e-06 1.1394e-05 1.1045e-05 -3.29e-07 -1.34e-07 -1.608e-08" />
+                                    <joint name="left_middle_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_PP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g082" />
+                                    <body name="left_middle_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0" gravcomp="0">
+                                      <inertial pos="0.01212 -0.00116 0.00058" mass="0.01824" fullinertia="5.77e-07 1.923e-06 1.9986e-06 -1.835e-08 1.0615e-07 -4.01e-09" />
+                                      <joint name="left_middle_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" actuatorfrcrange="-0.638 0.638" limited="true" actuatorfrclimited="true" frictionloss="0.01276" armature="0.0006" actuatorgravcomp="false" damping="4.06E-06" user="11.61831603" />
+                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_MP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g084" />
+                                      <body name="left_middle_DP" pos="0.0315 0 0" gravcomp="0">
+                                        <inertial pos="0.0124884990878 -0.00257288755106 -0.000107611266394" mass="0.004651" fullinertia="1.35086631681e-07 3.09867660405e-07 3.14999900964e-07 1.76891566567e-09 6.10588620655e-09 -8.98584780692e-10" />
+                                        <joint name="left_middle_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" actuatorfrcrange="-0.189369 0.189369" limited="true" actuatorfrclimited="true" frictionloss="0.00378738" armature="0.00042" actuatorgravcomp="false" damping="1.21E-06" user="14.66594768" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__DP_visual_HB1_4F" friction="0.4 0.05 0.001" condim="4" name="visual_g086" />
+                                        <geom quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 1 0.2 1" mesh="mesh_meshes_left_sharpa_wave__elastomer_HB1_4F" name="visual_g088" />
+                                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__DP_visual_HB1_4F" name="visual_g086_collision" contype="16" conaffinity="8173" condim="4" friction="1 1 1" />
+                                        <geom quat="0.5 0.5 -0.5 0.5" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__elastomer_HB1_4F" name="visual_g088_collision" contype="16" conaffinity="8173" condim="3" friction="1 0.1 0.01" solref="0.03 1" solimp="0.7 0.95 0.003 0.5 2" />
+                                      </body>
+                                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_MP_visual" name="visual_g084_collision" contype="16" conaffinity="8173" condim="4" friction="1 1 1" />
+                                    </body>
+                                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_PP_visual" name="visual_g082_collision" contype="16" conaffinity="8173" condim="4" friction="1 1 1" />
+                                  </body>
+                                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_MCP_VL_visual" name="visual_g080_collision" contype="16" conaffinity="8173" condim="4" friction="1 1 1" />
+                                </body>
+                                <body name="left_ring_MCP_VL" pos="0.1449 -0.0102993 0.00149966" quat="0.707108 0.707105 2.59734e-06 9.54059e-12" gravcomp="0">
+                                  <inertial pos="-0.0092 -0.0013 0" mass="0.00221" fullinertia="1.77e-07 1.104e-07 2.23e-07 5.4e-09 0 0" />
+                                  <joint name="left_ring_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_MCP_VL_visual" friction="1 1 1" condim="4" name="visual_g090" />
+                                  <body name="left_ring_PP" quat="0.707105 0.707108 0 0" gravcomp="0">
+                                    <inertial pos="0.027 -0.00055 -0.00068" mass="0.04741" fullinertia="2.168e-06 1.1394e-05 1.1045e-05 -3.29e-07 -1.34e-07 -1.608e-08" />
+                                    <joint name="left_ring_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_PP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g092" />
+                                    <body name="left_ring_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0" gravcomp="0">
+                                      <inertial pos="0.01212 -0.00116 0.00058" mass="0.01824" fullinertia="5.77e-07 1.923e-06 1.9986e-06 -1.835e-08 1.0615e-07 -4.01e-09" />
+                                      <joint name="left_ring_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" actuatorfrcrange="-0.638 0.638" limited="true" actuatorfrclimited="true" frictionloss="0.01276" armature="0.0006" actuatorgravcomp="false" damping="4.06E-06" user="11.61831603" />
+                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_MP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g094" />
+                                      <body name="left_ring_DP" pos="0.0315 0 0" gravcomp="0">
+                                        <inertial pos="0.0124884990878 -0.00257288753052 -0.000107611245853" mass="0.004651" fullinertia="1.35086632194e-07 3.09867660426e-07 3.14999901456e-07 1.76891437393e-09 6.10588491481e-09 -8.98585036789e-10" />
+                                        <joint name="left_ring_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" actuatorfrcrange="-0.189369 0.189369" limited="true" actuatorfrclimited="true" frictionloss="0.00378738" armature="0.00042" actuatorgravcomp="false" damping="1.21E-06" user="14.66594768" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__DP_visual_HB1_4F" friction="0.4 0.05 0.001" condim="4" name="visual_g096" />
+                                        <geom quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 1 0.2 1" mesh="mesh_meshes_left_sharpa_wave__elastomer_HB1_4F" name="visual_g098" />
+                                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__DP_visual_HB1_4F" name="visual_g096_collision" contype="32" conaffinity="8157" condim="4" friction="1 1 1" />
+                                        <geom quat="0.499998 0.5 -0.5 0.500002" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__elastomer_HB1_4F" name="visual_g098_collision" contype="32" conaffinity="8157" condim="3" friction="1 0.1 0.01" solref="0.015 1" solimp="0.7 0.95 0.003 0.5 2" />
+                                      </body>
+                                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_MP_visual" name="visual_g094_collision" contype="32" conaffinity="8157" condim="4" friction="1 1 1" />
+                                    </body>
+                                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_PP_visual" name="visual_g092_collision" contype="32" conaffinity="8157" condim="4" friction="1 1 1" />
+                                  </body>
+                                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_MCP_VL_visual" name="visual_g090_collision" contype="32" conaffinity="8157" condim="4" friction="1 1 1" />
+                                </body>
+                                <body name="left_pinky_MC" pos="0.1389 -0.0262994 0.0113597" quat="2.59734e-06 0.707105 7.79204e-06 -0.707108" gravcomp="0">
+                                  <inertial pos="0.011502 0.005621 0.030192" mass="0.123347" fullinertia="3.7226182E-05 4.4739532E-05 1.7056534E-05 -3.3554E-08 -7.90639E-07 -1.01988E-06" />
+                                  <joint name="left_pinky_CMC" pos="0 0 0" axis="0 0 1" range="0 0.2618" actuatorfrcrange="-0.5285 0.5285" limited="true" actuatorfrclimited="true" frictionloss="0.012" armature="0.00012" actuatorgravcomp="false" damping="4.20E-05" user="35.07416159" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_pinky_MC_visual" friction="1 1 1" condim="4" name="visual_g100" />
+                                  <body name="left_pinky_MCP_VL" pos="0.00836 0.0048 0" quat="0.499998 -0.5 0.5 0.500002" gravcomp="0">
+                                    <inertial pos="-0.0092 -0.0013 0" mass="0.00221" fullinertia="1.77e-07 1.104e-07 2.23e-07 5.4e-09 0 0" />
+                                    <joint name="left_pinky_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_MCP_VL_visual" friction="1 1 1" condim="4" name="visual_g102" />
+                                    <body name="left_pinky_PP" quat="0.707105 0.707108 0 0" gravcomp="0">
+                                      <inertial pos="0.027 -0.00055 -0.00068" mass="0.04741" fullinertia="2.168e-06 1.1394e-05 1.1045e-05 -3.29e-07 -1.34e-07 -1.608e-08" />
+                                      <joint name="left_pinky_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_PP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g104" />
+                                      <body name="left_pinky_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0" gravcomp="0">
+                                        <inertial pos="0.01212 -0.00116 0.00058" mass="0.01824" fullinertia="5.77e-07 1.923e-06 1.9986e-06 -1.835e-08 1.0615e-07 -4.01e-09" />
+                                        <joint name="left_pinky_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" actuatorfrcrange="-0.638 0.638" limited="true" actuatorfrclimited="true" frictionloss="0.01276" armature="0.0006" actuatorgravcomp="false" damping="4.06E-06" user="11.61831603" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__left_MP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g106" />
+                                        <body name="left_pinky_DP" pos="0.0315 0 0" gravcomp="0">
+                                          <inertial pos="0.0124884990878 -0.00257288755106 -0.000107611266394" mass="0.004651" fullinertia="1.35086631681e-07 3.09867660405e-07 3.14999900964e-07 1.76891566567e-09 6.10588620655e-09 -8.98584780692e-10" />
+                                          <joint name="left_pinky_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" actuatorfrcrange="-0.189369 0.189369" limited="true" actuatorfrclimited="true" frictionloss="0.00378738" armature="0.00042" actuatorgravcomp="false" damping="1.21E-06" user="14.66594768" />
+                                          <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_left_sharpa_wave__DP_visual_HB1_4F" friction="0.4 0.05 0.001" condim="4" name="visual_g108" />
+                                          <geom quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 1 0.2 1" mesh="mesh_meshes_left_sharpa_wave__elastomer_HB1_4F" name="visual_g110" />
+                                          <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__DP_visual_HB1_4F" name="visual_g108_collision" contype="64" conaffinity="8125" condim="4" friction="1 1 1" />
+                                          <geom quat="0.5 0.5 -0.5 0.5" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__elastomer_HB1_4F" name="visual_g110_collision" contype="64" conaffinity="8125" condim="3" friction="1 0.1 0.01" solref="0.03 1" solimp="0.7 0.95 0.003 0.5 2" />
+                                        </body>
+                                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_MP_visual" name="visual_g106_collision" contype="64" conaffinity="8125" condim="4" friction="1 1 1" />
+                                      </body>
+                                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_PP_visual" name="visual_g104_collision" contype="64" conaffinity="8125" condim="4" friction="1 1 1" />
+                                    </body>
+                                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_MCP_VL_visual" name="visual_g102_collision" contype="64" conaffinity="8125" condim="4" friction="1 1 1" />
+                                  </body>
+                                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_pinky_MC_visual" name="visual_g100_collision" contype="1" conaffinity="4097" condim="4" friction="1 1 1" />
+                                </body>
+                                <geom pos="0.052 0 0" quat="-2.59734e-06 0.707108 2.59735e-06 0.707105" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_left_sharpa_wave__left_hand_C_MC_visual" name="visual_g058_collision" contype="1" conaffinity="4097" />
+                              </body>
+                              <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__left_arm_link_7" name="visual_g056_collision" contype="1" conaffinity="4097" />
+                              <geom pos="0.0612781 -0.025992 0.0365818" quat="0.7398441931678 -0.392284988387712 0.437714944360966 -0.327335737744316" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__arm_cam_link" name="visual_g057_collision" contype="0" conaffinity="0" />
+                            </body>
+                            <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__left_arm_link_6" name="visual_g055_collision" contype="1" conaffinity="4097" />
+                          </body>
+                          <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__left_arm_link_5" name="visual_g054_collision" contype="1" conaffinity="4097" />
+                        </body>
+                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__left_arm_link_4" name="visual_g053_collision" contype="1" conaffinity="4097" />
+                      </body>
+                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__left_arm_link_3" name="visual_g052_collision" contype="1" conaffinity="4097" />
+                    </body>
+                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__left_arm_link_2" name="visual_g051_collision" contype="1" conaffinity="4097" />
+                  </body>
+                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__right_arm_link_1" quat="-3.67321e-06 1 0 0" name="visual_g050_collision" contype="1" conaffinity="4097" />
+                </body>
+                <body gravcomp="0" name="right_arm_link_1" pos="-0.1543 0.0360006 0.2648" quat="0.707107 -1.29867e-06 -0.707107 1.29867e-06">
+                  <inertial pos="0.00088 0.00219 -0.01059" quat="0.688853 0.0357846 0.0239507 0.723621" mass="1.52699" diaginertia="0.00234551 0.00218025 0.00173852" />
+                  <joint name="right_arm_joint_1" pos="0 0 0" axis="0 0 1" range="-1.5708 4.1888" actuatorfrcrange="-100 100" limited="true" actuatorfrclimited="true" damping="1.0128" armature="0.13878" frictionloss="0.026580" user="8.3776" />
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes_arm__right_arm_link_1" name="visual_g112" />
+                  <body gravcomp="0" name="right_arm_link_2" quat="0.499998 0.5 -0.5 0.500002">
+                    <inertial pos="0.00959 0.01941 0.00409" quat="0.925837 0.0741986 -0.0513587 0.366992" mass="0.55904" diaginertia="0.00132732 0.00102197 0.000830338" />
+                    <joint name="right_arm_joint_2" pos="0 0 0" axis="0 0 1" range="-2.0944 0.3491" actuatorfrcrange="-100 100" limited="true" actuatorfrclimited="true" damping="0.52452" armature="0.074980" frictionloss="0.50507" user="8.3776" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="mesh_meshes_arm__right_arm_link_2" name="visual_g113" />
+                    <body gravcomp="0" name="right_arm_link_3" pos="0.02 0.29135 0" quat="0.499998 0.5 0.5 -0.500002">
+                      <inertial pos="-0.00198 -1e-05 0.13229" mass="1.75279" fullinertia="0.01055354108 0.01071054083 0.00138493739 1.50781e-06 0.00042435788 -2.503992e-05" />
+                      <joint name="right_arm_joint_3" pos="0 0 0" axis="0 0 1" range="-1.2217 4.3633" actuatorfrcrange="-49 49" limited="true" actuatorfrclimited="true" damping="0.8" armature="0.063158" frictionloss="0.62038" user="8.3776" />
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.867 0.89 1" mesh="mesh_meshes_arm__right_arm_link_3" name="visual_g114" />
+                      <body gravcomp="0" name="right_arm_link_4" pos="-0.0192 0 0" quat="0.707105 -0.707108 0 0">
+                        <inertial pos="-0.00014 0.0106 0.00035" quat="0.695511 0.703467 -0.0881625 0.116732" mass="0.23456" diaginertia="0.00027845 0.000275322 0.000189542" />
+                        <joint name="right_arm_joint_4" pos="0 0 0" axis="0 0 1" range="-0.1745 2.2689" actuatorfrcrange="-59.06 59.06" limited="true" actuatorfrclimited="true" damping="0.02" armature="0.0086488" frictionloss="0.62472" user="11.3935" />
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.867 0.89 1" mesh="mesh_meshes_arm__right_arm_link_4" name="visual_g115" />
+                        <body gravcomp="0" name="right_arm_link_5" pos="0 0.24315 0" quat="0.5 0.5 -0.5 0.5">
+                          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_arm__right_arm_link_5" name="visual_g116" />
+                          <inertial pos="-0.00061 -0.00029 0.1057" quat="0.794377 -0.00393139 -0.00718137 0.60737" mass="1.09227" diaginertia="0.00764567 0.00747167 0.00118692" />
+                          <joint name="right_arm_joint_5" pos="0 0 0" axis="0 0 1" range="-1.5708 2.618" actuatorfrcrange="-29.53 29.53" limited="true" actuatorfrclimited="true" damping="0.20672" armature="0.0021428" frictionloss="0.10903" user="22.787" />
+                          <body gravcomp="0" name="right_arm_link_6" quat="0.500025 -0.499977 0.500023 0.499975">
+                            <inertial pos="-7e-05 -0.00578 0.00017" quat="0.999937 0.0107985 0.00283594 0.000667885" mass="0.09831" diaginertia="4.52362e-05 3.80256e-05 2.24888e-05" />
+                            <joint name="right_arm_joint_6" pos="0 0 0" axis="0 0 1" range="-1.0472 1.5708" actuatorfrcrange="-25.2 25.2" limited="true" actuatorfrclimited="true" damping="0.19727" armature="0.0014244" frictionloss="0.074672" user="26.7035" />
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.91 1 1" mesh="mesh_meshes_arm__right_arm_link_6" name="visual_g117" />
+                            <body gravcomp="0" name="right_arm_link_7" quat="0.707107 0.707107 0 0">
+                              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.867 0.91 1 1" mesh="mesh_meshes_arm__right_arm_link_7" name="visual_g118" />
+                              <geom pos="0.0612781 -0.025992 -0.0365818" quat="0.437712 0.327335 0.739847 0.392284" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.75 0.75 0.75 1" mesh="mesh_meshes_arm__arm_cam_link" name="visual_g119" />
+                              <inertial pos="0.04377 -0.01778 -0.01623" mass="0.24593" fullinertia="0.00021608576 0.00020714048 0.00016643629 -0.00001828916 -0.00005531968 0.00006743931" />
+                              <joint name="right_arm_joint_7" pos="0 0 0" axis="0 0 1" range="-0.8727 0.8727" actuatorfrcrange="-25.2 25.2" limited="true" actuatorfrclimited="true" damping="0.28" armature="0.012" frictionloss="0.064282" user="26.7035" />
+                              <body name="right_hand_mount" pos="0.003 0 0" gravcomp="0">
+                                <inertial pos="0.0921100079339 0.00536 0.00215985266773" mass="0.6506" fullinertia="0.000294753053987 0.000793354 0.000674253946013 -0.000105749009175 7.34939398481e-06 -2.49761156222e-06" />
+                                <geom pos="0.052 0 0" quat="0.707105 0 0.707108 0" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_hand_C_MC_visual" name="visual_g120" />
+                                <body name="right_thumb_CMC_VL" pos="0.0734 0.026 -0.0100001" quat="-0.500004 0.499996 0.499998 -0.500002" gravcomp="0">
+                                  <inertial pos="-0.00065 0.0002 0" mass="0.0025" fullinertia="2.08e-07 1.39e-07 2.6e-07 1.853e-08 0 0" />
+                                  <joint name="right_thumb_CMC_FE" pos="0 0 0" axis="0 0 1" range="-0.1745 1.9199" actuatorfrcrange="-3.3 3.3" limited="true" actuatorfrclimited="true" frictionloss="0.132" armature="0.0032" actuatorgravcomp="false" damping="4.20E-05" user="11.84076833" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_thumb_CMC_VL_visual" friction="1 1 1" condim="4" name="visual_g122" />
+                                  <body name="right_thumb_MC" pos="0 -0.005 0" quat="0.65328 -0.653282 0.270598 0.270599" gravcomp="0">
+                                    <inertial pos="0.03643 -0.01024 0.00517" mass="0.13587" fullinertia="1.922e-05 4.3621e-05 4.6191e-05 -1.981e-08 5.1687e-07 -1.534e-06" />
+                                    <joint name="right_thumb_CMC_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-3.3 3.3" limited="true" actuatorfrclimited="true" frictionloss="0.132" armature="0.0032" actuatorgravcomp="false" damping="4.20E-05" user="11.84076833" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_thumb_MC_visual" friction="1 1 1" condim="4" name="visual_g123" />
+                                    <body name="right_thumb_MCP_VL" pos="0.065 -0.006 0.010392" quat="0.965926 0.25882 0 0" gravcomp="0">
+                                      <inertial pos="-1.29e-09 -1.1e-10 0" mass="8e-05" fullinertia="6.4e-08 3.8e-08 7.9e-08 -1.61e-09 0 0" />
+                                      <joint name="right_thumb_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.5236 1.3963" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_thumb_MCP_VL_visual" friction="1 1 1" condim="4" name="visual_g125" />
+                                      <body name="right_thumb_PP" quat="0.707105 -0.707108 0 0" gravcomp="0">
+                                        <inertial pos="0.021256 -0.00095 -0.00092" mass="0.03078" fullinertia="1.255e-06 6.047e-06 5.915e-06 -4e-07 -4.267e-08 2.004e-08" />
+                                        <joint name="right_thumb_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_thumb_PP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g126" />
+                                        <body name="right_thumb_DP" pos="0.039 0 0" quat="0.707105 0.707108 0 0" gravcomp="0">
+                                          <inertial pos="0.00821816952763 -0.00177722088693 -0.000997218380977" mass="0.007981" fullinertia="3.15146825571e-07 1.04541535059e-06 1.06647672326e-06 -1.01155638547e-07 7.17504463967e-08 -1.41812945854e-08" />
+                                          <joint name="right_thumb_IP" pos="0 0 0" axis="0 0 1" range="0 1.7453" actuatorfrcrange="-0.638 0.638" limited="true" actuatorfrclimited="true" frictionloss="0.01276" armature="0.0006" actuatorgravcomp="false" damping="4.06E-06" user="11.61831603" />
+                                          <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__DP_Visual_HB1_TH" friction="0.4 0.05 0.001" condim="4" name="visual_g128" />
+                                          <geom quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 1 0.2 1" mesh="mesh_meshes_right_sharpa_wave__elastomer_HB1_TH" name="visual_g130" />
+                                          <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__DP_Visual_HB1_TH" name="visual_g128_collision" contype="128" conaffinity="8061" />
+                                          <geom quat="0.499998 0.5 -0.5 0.500002" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__elastomer_HB1_TH" name="visual_g130_collision" contype="128" conaffinity="8061" condim="3" friction="1 0.1 0.01" solref="0.03 1" solimp="0.7 0.95 0.003 0.5 2" />
+                                        </body>
+                                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_thumb_PP_visual" name="visual_g126_collision" contype="128" conaffinity="8061" />
+                                      </body>
+                                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_thumb_MCP_VL_visual" name="visual_g125_collision" contype="128" conaffinity="8061" />
+                                    </body>
+                                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_thumb_MC_visual" name="visual_g123_collision" contype="128" conaffinity="8061" />
+                                  </body>
+                                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_thumb_CMC_VL_visual" name="visual_g122_collision" contype="1" conaffinity="4097" />
+                                </body>
+                                <body name="right_index_MCP_VL" pos="0.1479 0.0303 -0.00100035" quat="0.707105 -0.707108 0 2.59735e-06" gravcomp="0">
+                                  <inertial pos="-0.0092 0.0013 0" mass="0.00221" fullinertia="1.77e-07 1.104e-07 2.23e-07 -5.4e-09 0 0" />
+                                  <joint name="right_index_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_MCP_VL_visual" friction="1 1 1" condim="4" name="visual_g132" />
+                                  <body name="right_index_PP" quat="0.707105 -0.707108 0 0" gravcomp="0">
+                                    <inertial pos="0.027 0.00055 0.00068" mass="0.04741" fullinertia="2.168e-06 1.1394e-05 1.1045e-05 3.29e-07 1.34e-07 -1.608e-08" />
+                                    <joint name="right_index_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_PP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g134" />
+                                    <body name="right_index_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0" gravcomp="0">
+                                      <inertial pos="0.01212 -0.00116 0.00058" mass="0.01824" fullinertia="5.77e-07 1.923e-06 1.9986e-06 -1.835e-08 1.0615e-07 -4.01e-09" />
+                                      <joint name="right_index_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" actuatorfrcrange="-0.638 0.638" limited="true" actuatorfrclimited="true" frictionloss="0.01276" armature="0.0006" actuatorgravcomp="false" damping="4.06E-06" user="11.61831603" />
+                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_MP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g136" />
+                                      <body name="right_index_DP" pos="0.0315 0 0" gravcomp="0">
+                                        <inertial pos="0.0124884990325 -0.00257288753052 -0.000107611245853" mass="0.004651" fullinertia="1.35086632194e-07 3.09867653464e-07 3.14999894495e-07 1.7689150363e-09 6.10588494255e-09 -8.98585036787e-10" />
+                                        <joint name="right_index_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" actuatorfrcrange="-0.189369 0.189369" limited="true" actuatorfrclimited="true" frictionloss="0.00378738" armature="0.00042" actuatorgravcomp="false" damping="1.21E-06" user="14.66594768" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__DP_visual_HB1_4F" friction="0.4 0.05 0.001" condim="4" name="visual_g138" />
+                                        <geom quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 1 0.2 1" mesh="mesh_meshes_right_sharpa_wave__elastomer_HB1_4F" name="visual_g140" />
+                                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__DP_visual_HB1_4F" name="visual_g138_collision" contype="256" conaffinity="7933" />
+                                        <geom quat="0.499998 0.5 -0.5 0.500002" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__elastomer_HB1_4F" name="visual_g140_collision" contype="256" conaffinity="7933" condim="3" friction="1 0.1 0.01" solref="0.015 1" solimp="0.9 0.98 0.001 0.5 2" />
+                                      </body>
+                                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_MP_visual" name="visual_g136_collision" contype="256" conaffinity="7933" />
+                                    </body>
+                                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_PP_visual" name="visual_g134_collision" contype="256" conaffinity="7933" />
+                                  </body>
+                                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_MCP_VL_visual" name="visual_g132_collision" contype="256" conaffinity="7933" />
+                                </body>
+                                <body name="right_middle_MCP_VL" pos="0.1509 0.01 -3.6328e-07" quat="0.707105 -0.707108 0 2.59735e-06" gravcomp="0">
+                                  <inertial pos="-0.0092 0.0013 0" mass="0.00221" fullinertia="1.77e-07 1.104e-07 2.23e-07 -5.4e-09 0 0" />
+                                  <joint name="right_middle_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_MCP_VL_visual" friction="1 1 1" condim="4" name="visual_g142" />
+                                  <body name="right_middle_PP" quat="0.707105 -0.707108 0 0" gravcomp="0">
+                                    <inertial pos="0.027 0.00055 0.00068" mass="0.04741" fullinertia="2.168e-06 1.1394e-05 1.1045e-05 3.29e-07 1.34e-07 -1.608e-08" />
+                                    <joint name="right_middle_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_PP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g144" />
+                                    <body name="right_middle_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0" gravcomp="0">
+                                      <inertial pos="0.01212 -0.00116 0.00058" mass="0.01824" fullinertia="5.77e-07 1.923e-06 1.9986e-06 -1.835e-08 1.0615e-07 -4.01e-09" />
+                                      <joint name="right_middle_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" actuatorfrcrange="-0.638 0.638" limited="true" actuatorfrclimited="true" frictionloss="0.01276" armature="0.0006" actuatorgravcomp="false" damping="4.06E-06" user="11.61831603" />
+                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_MP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g146" />
+                                      <body name="right_middle_DP" pos="0.0315 0 0" gravcomp="0">
+                                        <inertial pos="0.0124884990878 -0.00257288755106 -0.000107611266394" mass="0.004651" fullinertia="1.35086631681e-07 3.09867660405e-07 3.14999900964e-07 1.76891566567e-09 6.10588620655e-09 -8.98584780692e-10" />
+                                        <joint name="right_middle_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" actuatorfrcrange="-0.189369 0.189369" limited="true" actuatorfrclimited="true" frictionloss="0.00378738" armature="0.00042" actuatorgravcomp="false" damping="1.21E-06" user="14.66594768" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__DP_visual_HB1_4F" friction="0.4 0.05 0.001" condim="4" name="visual_g148" />
+                                        <geom quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 1 0.2 1" mesh="mesh_meshes_right_sharpa_wave__elastomer_HB1_4F" name="visual_g150" />
+                                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__DP_visual_HB1_4F" name="visual_g148_collision" contype="512" conaffinity="7677" />
+                                        <geom quat="0.5 0.5 -0.5 0.5" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__elastomer_HB1_4F" name="visual_g150_collision" contype="512" conaffinity="7677" condim="3" friction="1 0.1 0.01" solref="0.03 1" solimp="0.7 0.95 0.003 0.5 2" />
+                                      </body>
+                                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_MP_visual" name="visual_g146_collision" contype="512" conaffinity="7677" />
+                                    </body>
+                                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_PP_visual" name="visual_g144_collision" contype="512" conaffinity="7677" />
+                                  </body>
+                                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_MCP_VL_visual" name="visual_g142_collision" contype="512" conaffinity="7677" />
+                                </body>
+                                <body name="right_ring_MCP_VL" pos="0.1449 -0.0103 -0.00150034" quat="0.707105 -0.707108 0 2.59735e-06" gravcomp="0">
+                                  <inertial pos="-0.0092 0.0013 0" mass="0.00221" fullinertia="1.77e-07 1.104e-07 2.23e-07 -5.4e-09 0 0" />
+                                  <joint name="right_ring_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_MCP_VL_visual" friction="1 1 1" condim="4" name="visual_g152" />
+                                  <body name="right_ring_PP" quat="0.707105 -0.707108 0 0" gravcomp="0">
+                                    <inertial pos="0.027 0.00055 0.00068" mass="0.04741" fullinertia="2.168e-06 1.1394e-05 1.1045e-05 3.29e-07 1.34e-07 -1.608e-08" />
+                                    <joint name="right_ring_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_PP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g154" />
+                                    <body name="right_ring_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0" gravcomp="0">
+                                      <inertial pos="0.01212 -0.00116 0.00058" mass="0.01824" fullinertia="5.77e-07 1.923e-06 1.9986e-06 -1.835e-08 1.0615e-07 -4.01e-09" />
+                                      <joint name="right_ring_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" actuatorfrcrange="-0.638 0.638" limited="true" actuatorfrclimited="true" frictionloss="0.01276" armature="0.0006" actuatorgravcomp="false" damping="4.06E-06" user="11.61831603" />
+                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_MP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g156" />
+                                      <body name="right_ring_DP" pos="0.0315 0 0" gravcomp="0">
+                                        <inertial pos="0.0124884990878 -0.00257288753052 -0.000107611245853" mass="0.004651" fullinertia="1.35086632194e-07 3.09867660426e-07 3.14999901456e-07 1.76891437393e-09 6.10588491481e-09 -8.98585036789e-10" />
+                                        <joint name="right_ring_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" actuatorfrcrange="-0.189369 0.189369" limited="true" actuatorfrclimited="true" frictionloss="0.00378738" armature="0.00042" actuatorgravcomp="false" damping="1.21E-06" user="14.66594768" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__DP_visual_HB1_4F" friction="0.4 0.05 0.001" condim="4" name="visual_g158" />
+                                        <geom quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 1 0.2 1" mesh="mesh_meshes_right_sharpa_wave__elastomer_HB1_4F" name="visual_g160" />
+                                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__DP_visual_HB1_4F" name="visual_g158_collision" contype="1024" conaffinity="7165" />
+                                        <geom quat="0.499998 0.5 -0.5 0.500002" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__elastomer_HB1_4F" name="visual_g160_collision" contype="1024" conaffinity="7165" condim="3" friction="1 0.1 0.01" solref="0.03 1" solimp="0.7 0.95 0.003 0.5 2" />
+                                      </body>
+                                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_MP_visual" name="visual_g156_collision" contype="1024" conaffinity="7165" />
+                                    </body>
+                                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_PP_visual" name="visual_g154_collision" contype="1024" conaffinity="7165" />
+                                  </body>
+                                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_MCP_VL_visual" name="visual_g152_collision" contype="1024" conaffinity="7165" />
+                                </body>
+                                <body name="right_pinky_MC" pos="0.1389 -0.0263 -0.0113603" quat="-2.59734e-06 0.707108 -2.59735e-06 0.707105" gravcomp="0">
+                                  <inertial pos="0.011502 0.005621 -0.030192" mass="0.123347" fullinertia="3.7226182E-05 4.4739532E-05 1.7056534E-05 -3.3554E-08 7.90639E-07 1.01988E-06" />
+                                  <joint name="right_pinky_CMC" pos="0 0 0" axis="0 0 1" range="0 0.2618" actuatorfrcrange="-0.5285 0.5285" limited="true" actuatorfrclimited="true" frictionloss="0.012" armature="0.00012" actuatorgravcomp="false" damping="4.20E-05" user="35.07416159" />
+                                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_pinky_MC_visual" friction="1 1 1" condim="4" name="visual_g162" />
+                                  <body name="right_pinky_MCP_VL" pos="0.00836 0.0048 0" quat="0.499998 0.5 -0.5 0.500002" gravcomp="0">
+                                    <inertial pos="-0.0092 0.0013 0" mass="0.00221" fullinertia="1.77e-07 1.104e-07 2.23e-07 -5.4e-09 0 0" />
+                                    <joint name="right_pinky_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_MCP_VL_visual" friction="1 1 1" condim="4" name="visual_g164" />
+                                    <body name="right_pinky_PP" quat="0.707105 -0.707108 0 0" gravcomp="0">
+                                      <inertial pos="0.027 0.00055 0.00068" mass="0.04741" fullinertia="2.168e-06 1.1394e-05 1.1045e-05 3.29e-07 1.34e-07 -1.608e-08" />
+                                      <joint name="right_pinky_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" actuatorfrcrange="-1.864 1.864" limited="true" actuatorfrclimited="true" frictionloss="0.07456" armature="0.00265" actuatorgravcomp="false" damping="2.38E-05" user="16.07692878" />
+                                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_PP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g166" />
+                                      <body name="right_pinky_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0" gravcomp="0">
+                                        <inertial pos="0.01212 -0.00116 0.00058" mass="0.01824" fullinertia="5.77e-07 1.923e-06 1.9986e-06 -1.835e-08 1.0615e-07 -4.01e-09" />
+                                        <joint name="right_pinky_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" actuatorfrcrange="-0.638 0.638" limited="true" actuatorfrclimited="true" frictionloss="0.01276" armature="0.0006" actuatorgravcomp="false" damping="4.06E-06" user="11.61831603" />
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__right_MP_visual" friction="0.4 0.05 0.001" condim="4" name="visual_g168" />
+                                        <body name="right_pinky_DP" pos="0.0315 0 0" gravcomp="0">
+                                          <inertial pos="0.0124884990325 -0.00257288753052 -0.000107611245853" mass="0.004651" fullinertia="1.35086632194e-07 3.09867653464e-07 3.14999894495e-07 1.7689150363e-09 6.10588494255e-09 -8.98585036787e-10" />
+                                          <joint name="right_pinky_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" actuatorfrcrange="-0.189369 0.189369" limited="true" actuatorfrclimited="true" frictionloss="0.00378738" armature="0.00042" actuatorgravcomp="false" damping="1.21E-06" user="14.66594768" />
+                                          <geom type="mesh" contype="0" conaffinity="0" group="1" density="1500" rgba="0.792 0.82 0.933 1" mesh="mesh_meshes_right_sharpa_wave__DP_visual_HB1_4F" friction="0.4 0.05 0.001" condim="4" name="visual_g170" />
+                                          <geom quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.1 1 0.2 1" mesh="mesh_meshes_right_sharpa_wave__elastomer_HB1_4F" name="visual_g172" />
+                                          <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__DP_visual_HB1_4F" name="visual_g170_collision" contype="2048" conaffinity="6141" />
+                                          <geom quat="0.499998 0.5 -0.5 0.500002" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__elastomer_HB1_4F" name="visual_g172_collision" contype="2048" conaffinity="6141" condim="3" friction="1 0.1 0.01" solref="0.03 1" solimp="0.7 0.95 0.003 0.5 2" />
+                                        </body>
+                                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_MP_visual" name="visual_g168_collision" contype="2048" conaffinity="6141" />
+                                      </body>
+                                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_PP_visual" name="visual_g166_collision" contype="2048" conaffinity="6141" />
+                                    </body>
+                                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_MCP_VL_visual" name="visual_g164_collision" contype="2048" conaffinity="6141" />
+                                  </body>
+                                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_pinky_MC_visual" name="visual_g162_collision" contype="1" conaffinity="4097" />
+                                </body>
+                                <geom pos="0.052 0 0" quat="0.707105 0 0.707108 0" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_right_sharpa_wave__right_hand_C_MC_visual" name="visual_g120_collision" contype="1" conaffinity="4097" />
+                              </body>
+                              <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__right_arm_link_7" name="visual_g118_collision" contype="1" conaffinity="4097" />
+                              <geom pos="0.0612781 -0.025992 -0.0365818" quat="0.437712 0.327335 0.739847 0.392284" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__arm_cam_link" name="visual_g119_collision" contype="0" conaffinity="0" />
+                            </body>
+                            <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__right_arm_link_6" name="visual_g117_collision" contype="1" conaffinity="4097" />
+                          </body>
+                          <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__right_arm_link_5" name="visual_g116_collision" contype="1" conaffinity="4097" />
+                        </body>
+                        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__right_arm_link_4" name="visual_g115_collision" contype="1" conaffinity="4097" />
+                      </body>
+                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__right_arm_link_3" name="visual_g114_collision" contype="1" conaffinity="4097" />
+                    </body>
+                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__right_arm_link_2" name="visual_g113_collision" contype="1" conaffinity="4097" />
+                  </body>
+                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_arm__right_arm_link_1" name="visual_g112_collision" contype="1" conaffinity="4097" />
+                </body>
+                <body gravcomp="0" name="neck_link_1" pos="8.81569e-08 0.024 0.3728">
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.753 0.753 0.753 1" mesh="mesh_meshes_head__neck_link_1" name="visual_g174" />
+                  <inertial pos="-0.0001368 0.0048492 -0.0038785" quat="0.994271 -0.0966058 -0.0331876 -0.0314826" mass="0.310544" diaginertia="0.000138276 0.00012317 0.000111605" />
+                  <joint name="neck_joint_1" pos="0 0 0" axis="0 0 1" range="-1.5708 1.5708" actuatorfrcrange="-11 11" limited="true" actuatorfrclimited="true" armature="0.02815476" user="3.14" />
+                  <body gravcomp="0" name="neck_link_2" quat="0.499998 0.5 -0.5 0.500002">
+                    <inertial pos="5.12e-05 -0.0081262 0.0107144" quat="0.769975 0.63511 0.0425022 -0.0443631" mass="0.0598276" diaginertia="3.85168e-05 3.7503e-05 1.447e-05" />
+                    <joint name="neck_joint_2" pos="0 0 0" axis="0 0 1" range="-0.5236 0.5236" actuatorfrcrange="-11 11" limited="true" actuatorfrclimited="true" armature="0.02815476" user="3.14" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.753 0.753 0.753 1" mesh="mesh_meshes_head__neck_link_2" name="visual_g175" />
+                    <body gravcomp="0" name="neck_link_3" quat="0.707105 0.707108 0 0">
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.753 0.753 0.753 1" mesh="mesh_meshes_head__neck_link_3" name="visual_g176" />
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="head_visual_01_stl" name="head_stl_visual_01" />
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="head_visual_02_stl" name="head_stl_visual_02" />
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="head_visual_03_stl" name="head_stl_visual_03" />
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="head_visual_04_stl" name="head_stl_visual_04" />
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="head_visual_05_stl" name="head_stl_visual_05" />
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="head_visual_06_stl" name="head_stl_visual_06" />
+                      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="head_visual_07_stl" name="head_stl_visual_07" />
+                      <geom pos="0.083 0.07706 0.031" quat="0.499998 -0.5 0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0 0 0 1" mesh="mesh_meshes_head__head_cam_sensor" name="visual_g185" />
+                      <geom pos="0.083 0.07706 -0.031" quat="0.499998 -0.5 0.5 0.500002" type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0 0 0 1" mesh="mesh_meshes_head__head_cam_sensor" name="visual_g186" />
+                      <inertial pos="0.0785091 0.0169185 0.000508731" quat="0.693674 0.717939 -0.0532796 -0.0232773" mass="1.58374" diaginertia="0.005018 0.00400471 0.00263542" />
+                      <joint name="neck_joint_3" pos="0 0 0" axis="0 0 1" range="-0.5236 1.0472" actuatorfrcrange="-11 11" limited="true" actuatorfrclimited="true" armature="0.02815476" user="3.14" />
+                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_head__neck_link_3" name="visual_g176_collision" contype="1" conaffinity="4097" />
+                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="head_visual_01_stl" name="head_stl_visual_01_collision" contype="4096" conaffinity="0" />
+                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="head_visual_02_stl" name="head_stl_visual_02_collision" contype="4096" conaffinity="0" />
+                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="head_visual_03_stl" name="head_stl_visual_03_collision" contype="4096" conaffinity="0" />
+                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="head_visual_04_stl" name="head_stl_visual_04_collision" contype="4096" conaffinity="0" />
+                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="head_visual_05_stl" name="head_stl_visual_05_collision" contype="4096" conaffinity="0" />
+                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="head_visual_06_stl" name="head_stl_visual_06_collision" contype="4096" conaffinity="0" />
+                      <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="head_visual_07_stl" name="head_stl_visual_07_collision" contype="4096" conaffinity="0" />
+                      <geom pos="0.083 0.07706 0.031" quat="0.499998 -0.5 0.5 0.500002" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_head__head_cam_sensor" name="visual_g185_collision" contype="4096" conaffinity="0" />
+                      <geom pos="0.083 0.07706 -0.031" quat="0.499998 -0.5 0.5 0.500002" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_head__head_cam_sensor" name="visual_g186_collision" contype="4096" conaffinity="0" />
+                    </body>
+                    <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_head__neck_link_2" name="visual_g175_collision" contype="1" conaffinity="4097" />
+                  </body>
+                  <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_head__neck_link_1" name="visual_g174_collision" contype="1" conaffinity="4097" />
+                </body>
+                <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_torso__torso_base_link" pos="-0.000000590 -0.061564901 -1.147386522" quat="0.707106781 -0.000004157 -0.000001328 -0.707106781" name="visual_g045_collision" contype="1" conaffinity="4097" />
+                <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_torso__torso_base_link002" pos="-0.000000590 -0.061564901 -1.147386522" quat="0.707106781 -0.000004157 -0.000001328 -0.707106781" name="visual_g046_collision" contype="0" conaffinity="0" />
+                <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_torso__torso_base_link003" pos="-0.000004590 -0.057750901 -1.147378583" quat="0.707106781 -0.000004157 -0.000001328 -0.707106781" name="visual_g047_collision" contype="0" conaffinity="0" />
+                <geom pos="-0.0126496 0.1171 0.22518" quat="0.459227 -0.537688 -0.459231 0.537688" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_torso__torso_FTX_link" name="visual_g048_collision" contype="0" conaffinity="0" />
+                <geom pos="8.81569e-08 0.024 0.3248" quat="0.707105 0 0 -0.707108" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_head_base_link" name="visual_g049_collision" contype="1" conaffinity="4097" />
+              </body>
+              <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_lower_body__lower_body_link_4" name="visual_g044_collision" contype="1" conaffinity="4097" />
+            </body>
+            <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_lower_body__lower_body_link_3" name="visual_g043_collision" contype="1" conaffinity="4097" />
+          </body>
+          <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_lower_body__lower_body_link_2" name="visual_g042_collision" contype="1" conaffinity="4097" />
+        </body>
+        <geom type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes_lower_body__lower_body_link_1" name="visual_g041_collision" contype="1" conaffinity="4097" />
+      </body>
+      <geom pos="0.0065 0 0" type="mesh" rgba="1 1 1 0" mesh="mesh_root_link" name="visual_g000_collision" group="3" density="0" contype="1" conaffinity="4098" />
+      <geom pos="-0.26599 -0.081119 0.133" quat="0.0738962 0.703234 0.0738964 -0.703236" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes__ultrasonic_link_3" name="visual_g001_collision" contype="0" conaffinity="0" />
+      <geom pos="-0.26599 0.081119 0.133" quat="0.0738962 0.703234 0.0738964 -0.703236" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_meshes__ultrasonic_link_4" name="visual_g003_collision" contype="0" conaffinity="0" />
+      <geom pos="-0.135677 0 0.375099" quat="0.5 -0.5 -0.5 -0.5" type="mesh" group="3" density="0" rgba="1 1 1 0" mesh="mesh_lower_body_base_link" name="visual_g005_collision" contype="1" conaffinity="4097" />
+    </body>
+  </worldbody>
+  <equality>
+    <joint name="brake_chassis_slider_joint_1" joint1="chassis_slider_joint_1" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_chassis_slider_joint_2" joint1="chassis_slider_joint_2" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_chassis_slider_joint_3" joint1="chassis_slider_joint_3" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_chassis_slider_joint_4" joint1="chassis_slider_joint_4" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_chassis_steer_joint_1" joint1="chassis_steer_joint_1" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_chassis_steer_joint_2" joint1="chassis_steer_joint_2" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_chassis_steer_joint_3" joint1="chassis_steer_joint_3" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_chassis_steer_joint_4" joint1="chassis_steer_joint_4" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_lower_body_joint_1" joint1="lower_body_joint_1" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_lower_body_joint_2" joint1="lower_body_joint_2" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_lower_body_joint_3" joint1="lower_body_joint_3" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_lower_body_joint_4" joint1="lower_body_joint_4" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_lower_body_joint_5" joint1="lower_body_joint_5" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_neck_joint_1" joint1="neck_joint_1" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_neck_joint_2" joint1="neck_joint_2" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_neck_joint_3" joint1="neck_joint_3" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_arm_joint_1" joint1="left_arm_joint_1" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_arm_joint_2" joint1="left_arm_joint_2" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_arm_joint_3" joint1="left_arm_joint_3" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_arm_joint_4" joint1="left_arm_joint_4" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_arm_joint_5" joint1="left_arm_joint_5" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_arm_joint_6" joint1="left_arm_joint_6" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_arm_joint_7" joint1="left_arm_joint_7" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_arm_joint_1" joint1="right_arm_joint_1" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_arm_joint_2" joint1="right_arm_joint_2" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_arm_joint_3" joint1="right_arm_joint_3" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_arm_joint_4" joint1="right_arm_joint_4" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_arm_joint_5" joint1="right_arm_joint_5" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_arm_joint_6" joint1="right_arm_joint_6" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_arm_joint_7" joint1="right_arm_joint_7" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_thumb_CMC_FE" joint1="left_thumb_CMC_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_thumb_CMC_AA" joint1="left_thumb_CMC_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_thumb_MCP_FE" joint1="left_thumb_MCP_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_thumb_MCP_AA" joint1="left_thumb_MCP_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_thumb_IP" joint1="left_thumb_IP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_index_MCP_FE" joint1="left_index_MCP_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_index_MCP_AA" joint1="left_index_MCP_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_index_PIP" joint1="left_index_PIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_index_DIP" joint1="left_index_DIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_middle_MCP_FE" joint1="left_middle_MCP_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_middle_MCP_AA" joint1="left_middle_MCP_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_middle_PIP" joint1="left_middle_PIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_middle_DIP" joint1="left_middle_DIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_ring_MCP_FE" joint1="left_ring_MCP_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_ring_MCP_AA" joint1="left_ring_MCP_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_ring_PIP" joint1="left_ring_PIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_ring_DIP" joint1="left_ring_DIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_pinky_CMC" joint1="left_pinky_CMC" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_pinky_MCP_FE" joint1="left_pinky_MCP_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_pinky_MCP_AA" joint1="left_pinky_MCP_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_pinky_PIP" joint1="left_pinky_PIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_left_pinky_DIP" joint1="left_pinky_DIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_thumb_CMC_FE" joint1="right_thumb_CMC_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_thumb_CMC_AA" joint1="right_thumb_CMC_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_thumb_MCP_FE" joint1="right_thumb_MCP_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_thumb_MCP_AA" joint1="right_thumb_MCP_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_thumb_IP" joint1="right_thumb_IP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_index_MCP_FE" joint1="right_index_MCP_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_index_MCP_AA" joint1="right_index_MCP_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_index_PIP" joint1="right_index_PIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_index_DIP" joint1="right_index_DIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_middle_MCP_FE" joint1="right_middle_MCP_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_middle_MCP_AA" joint1="right_middle_MCP_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_middle_PIP" joint1="right_middle_PIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_middle_DIP" joint1="right_middle_DIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_ring_MCP_FE" joint1="right_ring_MCP_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_ring_MCP_AA" joint1="right_ring_MCP_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_ring_PIP" joint1="right_ring_PIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_ring_DIP" joint1="right_ring_DIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_pinky_CMC" joint1="right_pinky_CMC" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_pinky_MCP_FE" joint1="right_pinky_MCP_FE" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_pinky_MCP_AA" joint1="right_pinky_MCP_AA" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_pinky_PIP" joint1="right_pinky_PIP" active="true" polycoef="0 0 0 0 0" />
+    <joint name="brake_right_pinky_DIP" joint1="right_pinky_DIP" active="true" polycoef="0 0 0 0 0" />
+  </equality>
+  <actuator>
+    <motor name="chassis_steer_joint_1_position" joint="chassis_steer_joint_1" forcerange="-13.5 13.5" />
+    <motor name="chassis_steer_joint_2_position" joint="chassis_steer_joint_2" forcerange="-13.5 13.5" />
+    <motor name="chassis_steer_joint_3_position" joint="chassis_steer_joint_3" forcerange="-13.5 13.5" />
+    <motor name="chassis_steer_joint_4_position" joint="chassis_steer_joint_4" forcerange="-13.5 13.5" />
+    <motor name="chassis_wheel_joint_1_velocity" joint="chassis_wheel_joint_1" forcerange="-9 9" />
+    <motor name="chassis_wheel_joint_2_velocity" joint="chassis_wheel_joint_2" forcerange="-9 9" />
+    <motor name="chassis_wheel_joint_3_velocity" joint="chassis_wheel_joint_3" forcerange="-9 9" />
+    <motor name="chassis_wheel_joint_4_velocity" joint="chassis_wheel_joint_4" forcerange="-9 9" />
+    <position name="chassis_slider_joint_1_position" joint="chassis_slider_joint_1" kp="10000" kv="800" ctrlrange="0 0.06" forcerange="-150 150" />
+    <position name="chassis_slider_joint_2_position" joint="chassis_slider_joint_2" kp="10000" kv="800" ctrlrange="0 0.06" forcerange="-150 150" />
+    <position name="chassis_slider_joint_3_position" joint="chassis_slider_joint_3" kp="10000" kv="800" ctrlrange="0 0.06" forcerange="-150 150" />
+    <position name="chassis_slider_joint_4_position" joint="chassis_slider_joint_4" kp="10000" kv="800" ctrlrange="0 0.06" forcerange="-150 150" />
+    <motor name="left_arm_joint_1_ctrl" joint="left_arm_joint_1" forcerange="-100 100" />
+    <motor name="left_arm_joint_2_ctrl" joint="left_arm_joint_2" forcerange="-100 100" />
+    <motor name="left_arm_joint_3_ctrl" joint="left_arm_joint_3" forcerange="-49 49" />
+    <general name="left_arm_joint_4_ctrl" joint="left_arm_joint_4" forcerange="-59.06 59.06" gaintype="fixed" gainprm="1.25" biastype="none" />
+    <general name="left_arm_joint_5_ctrl" joint="left_arm_joint_5" forcerange="-29.53 29.53" gaintype="fixed" gainprm="1.25" biastype="none" />
+    <general name="left_arm_joint_6_ctrl" joint="left_arm_joint_6" forcerange="-25.2 25.2" gaintype="fixed" gainprm="1.5" biastype="none" />
+    <motor name="left_arm_joint_7_ctrl" joint="left_arm_joint_7" forcerange="-25.2 25.2" />
+    <motor name="right_arm_joint_1_ctrl" joint="right_arm_joint_1" forcerange="-100 100" />
+    <motor name="right_arm_joint_2_ctrl" joint="right_arm_joint_2" forcerange="-100 100" />
+    <motor name="right_arm_joint_3_ctrl" joint="right_arm_joint_3" forcerange="-49 49" />
+    <motor name="right_arm_joint_4_ctrl" joint="right_arm_joint_4" forcerange="-59.06 59.06" />
+    <motor name="right_arm_joint_5_ctrl" joint="right_arm_joint_5" forcerange="-29.53 29.53" />
+    <general name="right_arm_joint_6_ctrl" joint="right_arm_joint_6" forcerange="-25.2 25.2" gaintype="fixed" gainprm="1.2" biastype="none" />
+    <motor name="right_arm_joint_7_ctrl" joint="right_arm_joint_7" forcerange="-25.2 25.2" />
+    <motor name="lower_body_joint_1_position" joint="lower_body_joint_1" forcerange="-280 280" />
+    <motor name="lower_body_joint_2_position" joint="lower_body_joint_2" forcerange="-280 280" />
+    <motor name="lower_body_joint_3_position" joint="lower_body_joint_3" forcerange="-250.5 250.5" />
+    <motor name="lower_body_joint_4_position" joint="lower_body_joint_4" forcerange="-250.5 250.5" />
+    <motor name="lower_body_joint_5_position" joint="lower_body_joint_5" forcerange="-167 167" />
+    <motor name="neck_joint_1_position" joint="neck_joint_1" forcerange="-11 11" />
+    <motor name="neck_joint_2_position" joint="neck_joint_2" forcerange="-11 11" />
+    <motor name="neck_joint_3_position" joint="neck_joint_3" forcerange="-11 11" />
+    <position name="left_thumb_CMC_FE_ctrl" joint="left_thumb_CMC_FE" kp="27.8" dampratio="2.1" ctrlrange="-0.1745 1.9199" forcerange="-3.3 3.3" />
+    <position name="left_thumb_CMC_AA_ctrl" joint="left_thumb_CMC_AA" kp="52.8" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-3.3 3.3" />
+    <position name="left_thumb_MCP_FE_ctrl" joint="left_thumb_MCP_FE" kp="11.424" dampratio="1.668" ctrlrange="-0.5236 1.3963" forcerange="-1.864 1.864" />
+    <position name="left_thumb_MCP_AA_ctrl" joint="left_thumb_MCP_AA" kp="26.48" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-1.864 1.864" />
+    <position name="left_thumb_IP_ctrl" joint="left_thumb_IP" kp="3.6" dampratio="1.9364" ctrlrange="0 1.7453" forcerange="-0.638 0.638" />
+    <position name="left_index_MCP_FE_ctrl" joint="left_index_MCP_FE" kp="11.424" dampratio="1.6978" ctrlrange="-0.17453293 1.5708" forcerange="-1.864 1.864" />
+    <position name="left_index_MCP_AA_ctrl" joint="left_index_MCP_AA" kp="26.48" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-1.864 1.864" />
+    <position name="left_index_PIP_ctrl" joint="left_index_PIP" kp="2.16" dampratio="1.5859" ctrlrange="0 1.7453" forcerange="-0.638 0.638" />
+    <position name="left_index_DIP_ctrl" joint="left_index_DIP" kp="2.16" dampratio="1.914" ctrlrange="0 1.3963" forcerange="-0.189369 0.189369" />
+    <position name="left_middle_MCP_FE_ctrl" joint="left_middle_MCP_FE" kp="9.52" dampratio="1.4816" ctrlrange="-0.17453293 1.5708" forcerange="-1.864 1.864" />
+    <position name="left_middle_MCP_AA_ctrl" joint="left_middle_MCP_AA" kp="26.48" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-1.864 1.864" />
+    <position name="left_middle_PIP_ctrl" joint="left_middle_PIP" kp="1.8" dampratio="1.3995" ctrlrange="0 1.7453" forcerange="-0.638 0.638" />
+    <position name="left_middle_DIP_ctrl" joint="left_middle_DIP" kp="1.08" dampratio="1.489" ctrlrange="0 1.3963" forcerange="-0.189369 0.189369" />
+    <position name="left_ring_MCP_FE_ctrl" joint="left_ring_MCP_FE" kp="11.424" dampratio="1.6829" ctrlrange="-0.17453293 1.5708" forcerange="-1.864 1.864" />
+    <position name="left_ring_MCP_AA_ctrl" joint="left_ring_MCP_AA" kp="26.48" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-1.864 1.864" />
+    <position name="left_ring_PIP_ctrl" joint="left_ring_PIP" kp="1.8" dampratio="1.4219" ctrlrange="0 1.7453" forcerange="-0.638 0.638" />
+    <position name="left_ring_DIP_ctrl" joint="left_ring_DIP" kp="2.16" dampratio="1.9736" ctrlrange="0 1.3963" forcerange="-0.189369 0.189369" />
+    <position name="left_pinky_CMC_ctrl" joint="left_pinky_CMC" kp="5.52" dampratio="0.9" ctrlrange="0 0.2618" forcerange="-0.5285 0.5285" />
+    <position name="left_pinky_MCP_FE_ctrl" joint="left_pinky_MCP_FE" kp="11.424" dampratio="1.7574" ctrlrange="-0.17453293 1.5708" forcerange="-1.864 1.864" />
+    <position name="left_pinky_MCP_AA_ctrl" joint="left_pinky_MCP_AA" kp="26.48" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-1.864 1.864" />
+    <position name="left_pinky_PIP_ctrl" joint="left_pinky_PIP" kp="2.16" dampratio="1.6307" ctrlrange="0 1.7453" forcerange="-0.638 0.638" />
+    <position name="left_pinky_DIP_ctrl" joint="left_pinky_DIP" kp="3.6" dampratio="2.3238" ctrlrange="0 1.3963" forcerange="-0.189369 0.189369" />
+    <position name="right_thumb_CMC_FE_ctrl" joint="right_thumb_CMC_FE" kp="27.8" dampratio="2.1" ctrlrange="-0.1745 1.9199" forcerange="-3.3 3.3" />
+    <position name="right_thumb_CMC_AA_ctrl" joint="right_thumb_CMC_AA" kp="52.8" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-3.3 3.3" />
+    <position name="right_thumb_MCP_FE_ctrl" joint="right_thumb_MCP_FE" kp="11.424" dampratio="1.668" ctrlrange="-0.5236 1.3963" forcerange="-1.864 1.864" />
+    <position name="right_thumb_MCP_AA_ctrl" joint="right_thumb_MCP_AA" kp="26.48" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-1.864 1.864" />
+    <position name="right_thumb_IP_ctrl" joint="right_thumb_IP" kp="3.6" dampratio="1.9364" ctrlrange="0 1.7453" forcerange="-0.638 0.638" />
+    <position name="right_index_MCP_FE_ctrl" joint="right_index_MCP_FE" kp="11.424" dampratio="1.6978" ctrlrange="-0.17453293 1.5708" forcerange="-1.864 1.864" />
+    <position name="right_index_MCP_AA_ctrl" joint="right_index_MCP_AA" kp="26.48" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-1.864 1.864" />
+    <position name="right_index_PIP_ctrl" joint="right_index_PIP" kp="2.16" dampratio="1.5859" ctrlrange="0 1.7453" forcerange="-0.638 0.638" />
+    <position name="right_index_DIP_ctrl" joint="right_index_DIP" kp="2.16" dampratio="1.914" ctrlrange="0 1.3963" forcerange="-0.189369 0.189369" />
+    <position name="right_middle_MCP_FE_ctrl" joint="right_middle_MCP_FE" kp="9.52" dampratio="1.4816" ctrlrange="-0.17453293 1.5708" forcerange="-1.864 1.864" />
+    <position name="right_middle_MCP_AA_ctrl" joint="right_middle_MCP_AA" kp="26.48" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-1.864 1.864" />
+    <position name="right_middle_PIP_ctrl" joint="right_middle_PIP" kp="1.8" dampratio="1.3995" ctrlrange="0 1.7453" forcerange="-0.638 0.638" />
+    <position name="right_middle_DIP_ctrl" joint="right_middle_DIP" kp="1.08" dampratio="1.489" ctrlrange="0 1.3963" forcerange="-0.189369 0.189369" />
+    <position name="right_ring_MCP_FE_ctrl" joint="right_ring_MCP_FE" kp="11.424" dampratio="1.6829" ctrlrange="-0.17453293 1.5708" forcerange="-1.864 1.864" />
+    <position name="right_ring_MCP_AA_ctrl" joint="right_ring_MCP_AA" kp="26.48" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-1.864 1.864" />
+    <position name="right_ring_PIP_ctrl" joint="right_ring_PIP" kp="1.8" dampratio="1.4219" ctrlrange="0 1.7453" forcerange="-0.638 0.638" />
+    <position name="right_ring_DIP_ctrl" joint="right_ring_DIP" kp="2.16" dampratio="1.9736" ctrlrange="0 1.3963" forcerange="-0.189369 0.189369" />
+    <position name="right_pinky_CMC_ctrl" joint="right_pinky_CMC" kp="5.52" dampratio="0.9" ctrlrange="0 0.2618" forcerange="-0.5285 0.5285" />
+    <position name="right_pinky_MCP_FE_ctrl" joint="right_pinky_MCP_FE" kp="11.424" dampratio="1.7574" ctrlrange="-0.17453293 1.5708" forcerange="-1.864 1.864" />
+    <position name="right_pinky_MCP_AA_ctrl" joint="right_pinky_MCP_AA" kp="26.48" dampratio="0.9" ctrlrange="-0.3491 0.3491" forcerange="-1.864 1.864" />
+    <position name="right_pinky_PIP_ctrl" joint="right_pinky_PIP" kp="2.16" dampratio="1.6307" ctrlrange="0 1.7453" forcerange="-0.638 0.638" />
+    <position name="right_pinky_DIP_ctrl" joint="right_pinky_DIP" kp="3.6" dampratio="2.3238" ctrlrange="0 1.3963" forcerange="-0.189369 0.189369" />
+  </actuator>
+  <contact>
+    <exclude body1="lower_body_link_1" body2="lower_body_link_2" />
+    <exclude body1="lower_body_link_1" body2="lower_body_link_3" />
+    <exclude body1="lower_body_link_1" body2="lower_body_link_4" />
+    <exclude body1="lower_body_link_1" body2="lower_body_link_5" />
+    <exclude body1="lower_body_link_2" body2="lower_body_link_3" />
+    <exclude body1="lower_body_link_2" body2="lower_body_link_4" />
+    <exclude body1="lower_body_link_2" body2="lower_body_link_5" />
+    <exclude body1="lower_body_link_3" body2="lower_body_link_4" />
+    <exclude body1="lower_body_link_3" body2="lower_body_link_5" />
+    <exclude body1="lower_body_link_4" body2="lower_body_link_5" />
+    <exclude body1="left_hand_mount" body2="left_thumb_CMC_VL" />
+    <exclude body1="left_hand_mount" body2="left_thumb_MC" />
+    <exclude body1="left_thumb_MC" body2="left_thumb_MCP_VL" />
+    <exclude body1="left_thumb_MC" body2="left_thumb_PP" />
+    <exclude body1="left_thumb_MCP_VL" body2="left_thumb_PP" />
+    <exclude body1="left_thumb_PP" body2="left_thumb_DP" />
+    <exclude body1="left_hand_mount" body2="left_index_MCP_VL" />
+    <exclude body1="left_index_MCP_VL" body2="left_index_PP" />
+    <exclude body1="left_index_PP" body2="left_index_MP" />
+    <exclude body1="left_index_MP" body2="left_index_DP" />
+    <exclude body1="left_hand_mount" body2="left_middle_MCP_VL" />
+    <exclude body1="left_middle_MCP_VL" body2="left_middle_PP" />
+    <exclude body1="left_middle_PP" body2="left_middle_MP" />
+    <exclude body1="left_middle_MP" body2="left_middle_DP" />
+    <exclude body1="left_hand_mount" body2="left_ring_MCP_VL" />
+    <exclude body1="left_ring_MCP_VL" body2="left_ring_PP" />
+    <exclude body1="left_ring_PP" body2="left_ring_MP" />
+    <exclude body1="left_ring_MP" body2="left_ring_DP" />
+    <exclude body1="left_hand_mount" body2="left_pinky_MC" />
+    <exclude body1="left_pinky_MC" body2="left_pinky_MCP_VL" />
+    <exclude body1="left_pinky_MC" body2="left_pinky_PP" />
+    <exclude body1="left_pinky_MCP_VL" body2="left_pinky_PP" />
+    <exclude body1="left_pinky_PP" body2="left_pinky_MP" />
+    <exclude body1="left_pinky_MP" body2="left_pinky_DP" />
+    <exclude body1="right_hand_mount" body2="right_thumb_CMC_VL" />
+    <exclude body1="right_hand_mount" body2="right_thumb_MC" />
+    <exclude body1="right_thumb_MC" body2="right_thumb_MCP_VL" />
+    <exclude body1="right_thumb_MC" body2="right_thumb_PP" />
+    <exclude body1="right_thumb_MCP_VL" body2="right_thumb_PP" />
+    <exclude body1="right_thumb_PP" body2="right_thumb_DP" />
+    <exclude body1="right_hand_mount" body2="right_index_MCP_VL" />
+    <exclude body1="right_index_MCP_VL" body2="right_index_PP" />
+    <exclude body1="right_index_PP" body2="right_index_MP" />
+    <exclude body1="right_index_MP" body2="right_index_DP" />
+    <exclude body1="right_hand_mount" body2="right_middle_MCP_VL" />
+    <exclude body1="right_middle_MCP_VL" body2="right_middle_PP" />
+    <exclude body1="right_middle_PP" body2="right_middle_MP" />
+    <exclude body1="right_middle_MP" body2="right_middle_DP" />
+    <exclude body1="right_hand_mount" body2="right_ring_MCP_VL" />
+    <exclude body1="right_ring_MCP_VL" body2="right_ring_PP" />
+    <exclude body1="right_ring_PP" body2="right_ring_MP" />
+    <exclude body1="right_ring_MP" body2="right_ring_DP" />
+    <exclude body1="right_hand_mount" body2="right_pinky_MC" />
+    <exclude body1="right_pinky_MC" body2="right_pinky_MCP_VL" />
+    <exclude body1="right_pinky_MC" body2="right_pinky_PP" />
+    <exclude body1="right_pinky_MCP_VL" body2="right_pinky_PP" />
+    <exclude body1="right_pinky_PP" body2="right_pinky_MP" />
+    <exclude body1="right_pinky_MP" body2="right_pinky_DP" />
+    <exclude body1="north" body2="chassis_steer_link_1" />
+    <exclude body1="north" body2="chassis_wheel_link_1" />
+    <exclude body1="chassis_slider_link_1" body2="chassis_wheel_link_1" />
+    <exclude body1="north" body2="chassis_steer_link_2" />
+    <exclude body1="north" body2="chassis_wheel_link_2" />
+    <exclude body1="chassis_slider_link_2" body2="chassis_wheel_link_2" />
+    <exclude body1="north" body2="chassis_steer_link_3" />
+    <exclude body1="north" body2="chassis_wheel_link_3" />
+    <exclude body1="chassis_slider_link_3" body2="chassis_wheel_link_3" />
+    <exclude body1="north" body2="chassis_steer_link_4" />
+    <exclude body1="north" body2="chassis_wheel_link_4" />
+    <exclude body1="chassis_slider_link_4" body2="chassis_wheel_link_4" />
+    <exclude body1="chassis_slider_link_3" body2="chassis_slider_link_4" />
+    <exclude body1="chassis_slider_link_3" body2="chassis_steer_link_4" />
+    <exclude body1="left_arm_link_5" body2="left_arm_link_7" />
+    <exclude body1="right_arm_link_5" body2="right_arm_link_7" />
+    <exclude body1="neck_link_1" body2="neck_link_3" />
+  </contact>
+  <sensor>
+    <actuatorpos name="left_thumb_CMC_FE_pos" actuator="left_thumb_CMC_FE_ctrl" />
+    <actuatorvel name="left_thumb_CMC_FE_vel" actuator="left_thumb_CMC_FE_ctrl" />
+    <actuatorfrc name="left_thumb_CMC_FE_frc" actuator="left_thumb_CMC_FE_ctrl" />
+    <actuatorpos name="left_thumb_CMC_AA_pos" actuator="left_thumb_CMC_AA_ctrl" />
+    <actuatorvel name="left_thumb_CMC_AA_vel" actuator="left_thumb_CMC_AA_ctrl" />
+    <actuatorfrc name="left_thumb_CMC_AA_frc" actuator="left_thumb_CMC_AA_ctrl" />
+    <actuatorpos name="left_thumb_MCP_FE_pos" actuator="left_thumb_MCP_FE_ctrl" />
+    <actuatorvel name="left_thumb_MCP_FE_vel" actuator="left_thumb_MCP_FE_ctrl" />
+    <actuatorfrc name="left_thumb_MCP_FE_frc" actuator="left_thumb_MCP_FE_ctrl" />
+    <actuatorpos name="left_thumb_MCP_AA_pos" actuator="left_thumb_MCP_AA_ctrl" />
+    <actuatorvel name="left_thumb_MCP_AA_vel" actuator="left_thumb_MCP_AA_ctrl" />
+    <actuatorfrc name="left_thumb_MCP_AA_frc" actuator="left_thumb_MCP_AA_ctrl" />
+    <actuatorpos name="left_thumb_IP_pos" actuator="left_thumb_IP_ctrl" />
+    <actuatorvel name="left_thumb_IP_vel" actuator="left_thumb_IP_ctrl" />
+    <actuatorfrc name="left_thumb_IP_frc" actuator="left_thumb_IP_ctrl" />
+    <actuatorpos name="left_index_MCP_FE_pos" actuator="left_index_MCP_FE_ctrl" />
+    <actuatorvel name="left_index_MCP_FE_vel" actuator="left_index_MCP_FE_ctrl" />
+    <actuatorfrc name="left_index_MCP_FE_frc" actuator="left_index_MCP_FE_ctrl" />
+    <actuatorpos name="left_index_MCP_AA_pos" actuator="left_index_MCP_AA_ctrl" />
+    <actuatorvel name="left_index_MCP_AA_vel" actuator="left_index_MCP_AA_ctrl" />
+    <actuatorfrc name="left_index_MCP_AA_frc" actuator="left_index_MCP_AA_ctrl" />
+    <actuatorpos name="left_index_PIP_pos" actuator="left_index_PIP_ctrl" />
+    <actuatorvel name="left_index_PIP_vel" actuator="left_index_PIP_ctrl" />
+    <actuatorfrc name="left_index_PIP_frc" actuator="left_index_PIP_ctrl" />
+    <actuatorpos name="left_index_DIP_pos" actuator="left_index_DIP_ctrl" />
+    <actuatorvel name="left_index_DIP_vel" actuator="left_index_DIP_ctrl" />
+    <actuatorfrc name="left_index_DIP_frc" actuator="left_index_DIP_ctrl" />
+    <actuatorpos name="left_middle_MCP_FE_pos" actuator="left_middle_MCP_FE_ctrl" />
+    <actuatorvel name="left_middle_MCP_FE_vel" actuator="left_middle_MCP_FE_ctrl" />
+    <actuatorfrc name="left_middle_MCP_FE_frc" actuator="left_middle_MCP_FE_ctrl" />
+    <actuatorpos name="left_middle_MCP_AA_pos" actuator="left_middle_MCP_AA_ctrl" />
+    <actuatorvel name="left_middle_MCP_AA_vel" actuator="left_middle_MCP_AA_ctrl" />
+    <actuatorfrc name="left_middle_MCP_AA_frc" actuator="left_middle_MCP_AA_ctrl" />
+    <actuatorpos name="left_middle_PIP_pos" actuator="left_middle_PIP_ctrl" />
+    <actuatorvel name="left_middle_PIP_vel" actuator="left_middle_PIP_ctrl" />
+    <actuatorfrc name="left_middle_PIP_frc" actuator="left_middle_PIP_ctrl" />
+    <actuatorpos name="left_middle_DIP_pos" actuator="left_middle_DIP_ctrl" />
+    <actuatorvel name="left_middle_DIP_vel" actuator="left_middle_DIP_ctrl" />
+    <actuatorfrc name="left_middle_DIP_frc" actuator="left_middle_DIP_ctrl" />
+    <actuatorpos name="left_ring_MCP_FE_pos" actuator="left_ring_MCP_FE_ctrl" />
+    <actuatorvel name="left_ring_MCP_FE_vel" actuator="left_ring_MCP_FE_ctrl" />
+    <actuatorfrc name="left_ring_MCP_FE_frc" actuator="left_ring_MCP_FE_ctrl" />
+    <actuatorpos name="left_ring_MCP_AA_pos" actuator="left_ring_MCP_AA_ctrl" />
+    <actuatorvel name="left_ring_MCP_AA_vel" actuator="left_ring_MCP_AA_ctrl" />
+    <actuatorfrc name="left_ring_MCP_AA_frc" actuator="left_ring_MCP_AA_ctrl" />
+    <actuatorpos name="left_ring_PIP_pos" actuator="left_ring_PIP_ctrl" />
+    <actuatorvel name="left_ring_PIP_vel" actuator="left_ring_PIP_ctrl" />
+    <actuatorfrc name="left_ring_PIP_frc" actuator="left_ring_PIP_ctrl" />
+    <actuatorpos name="left_ring_DIP_pos" actuator="left_ring_DIP_ctrl" />
+    <actuatorvel name="left_ring_DIP_vel" actuator="left_ring_DIP_ctrl" />
+    <actuatorfrc name="left_ring_DIP_frc" actuator="left_ring_DIP_ctrl" />
+    <actuatorpos name="left_pinky_CMC_pos" actuator="left_pinky_CMC_ctrl" />
+    <actuatorvel name="left_pinky_CMC_vel" actuator="left_pinky_CMC_ctrl" />
+    <actuatorfrc name="left_pinky_CMC_frc" actuator="left_pinky_CMC_ctrl" />
+    <actuatorpos name="left_pinky_MCP_FE_pos" actuator="left_pinky_MCP_FE_ctrl" />
+    <actuatorvel name="left_pinky_MCP_FE_vel" actuator="left_pinky_MCP_FE_ctrl" />
+    <actuatorfrc name="left_pinky_MCP_FE_frc" actuator="left_pinky_MCP_FE_ctrl" />
+    <actuatorpos name="left_pinky_MCP_AA_pos" actuator="left_pinky_MCP_AA_ctrl" />
+    <actuatorvel name="left_pinky_MCP_AA_vel" actuator="left_pinky_MCP_AA_ctrl" />
+    <actuatorfrc name="left_pinky_MCP_AA_frc" actuator="left_pinky_MCP_AA_ctrl" />
+    <actuatorpos name="left_pinky_PIP_pos" actuator="left_pinky_PIP_ctrl" />
+    <actuatorvel name="left_pinky_PIP_vel" actuator="left_pinky_PIP_ctrl" />
+    <actuatorfrc name="left_pinky_PIP_frc" actuator="left_pinky_PIP_ctrl" />
+    <actuatorpos name="left_pinky_DIP_pos" actuator="left_pinky_DIP_ctrl" />
+    <actuatorvel name="left_pinky_DIP_vel" actuator="left_pinky_DIP_ctrl" />
+    <actuatorfrc name="left_pinky_DIP_frc" actuator="left_pinky_DIP_ctrl" />
+    <actuatorpos name="right_thumb_CMC_FE_pos" actuator="right_thumb_CMC_FE_ctrl" />
+    <actuatorvel name="right_thumb_CMC_FE_vel" actuator="right_thumb_CMC_FE_ctrl" />
+    <actuatorfrc name="right_thumb_CMC_FE_frc" actuator="right_thumb_CMC_FE_ctrl" />
+    <actuatorpos name="right_thumb_CMC_AA_pos" actuator="right_thumb_CMC_AA_ctrl" />
+    <actuatorvel name="right_thumb_CMC_AA_vel" actuator="right_thumb_CMC_AA_ctrl" />
+    <actuatorfrc name="right_thumb_CMC_AA_frc" actuator="right_thumb_CMC_AA_ctrl" />
+    <actuatorpos name="right_thumb_MCP_FE_pos" actuator="right_thumb_MCP_FE_ctrl" />
+    <actuatorvel name="right_thumb_MCP_FE_vel" actuator="right_thumb_MCP_FE_ctrl" />
+    <actuatorfrc name="right_thumb_MCP_FE_frc" actuator="right_thumb_MCP_FE_ctrl" />
+    <actuatorpos name="right_thumb_MCP_AA_pos" actuator="right_thumb_MCP_AA_ctrl" />
+    <actuatorvel name="right_thumb_MCP_AA_vel" actuator="right_thumb_MCP_AA_ctrl" />
+    <actuatorfrc name="right_thumb_MCP_AA_frc" actuator="right_thumb_MCP_AA_ctrl" />
+    <actuatorpos name="right_thumb_IP_pos" actuator="right_thumb_IP_ctrl" />
+    <actuatorvel name="right_thumb_IP_vel" actuator="right_thumb_IP_ctrl" />
+    <actuatorfrc name="right_thumb_IP_frc" actuator="right_thumb_IP_ctrl" />
+    <actuatorpos name="right_index_MCP_FE_pos" actuator="right_index_MCP_FE_ctrl" />
+    <actuatorvel name="right_index_MCP_FE_vel" actuator="right_index_MCP_FE_ctrl" />
+    <actuatorfrc name="right_index_MCP_FE_frc" actuator="right_index_MCP_FE_ctrl" />
+    <actuatorpos name="right_index_MCP_AA_pos" actuator="right_index_MCP_AA_ctrl" />
+    <actuatorvel name="right_index_MCP_AA_vel" actuator="right_index_MCP_AA_ctrl" />
+    <actuatorfrc name="right_index_MCP_AA_frc" actuator="right_index_MCP_AA_ctrl" />
+    <actuatorpos name="right_index_PIP_pos" actuator="right_index_PIP_ctrl" />
+    <actuatorvel name="right_index_PIP_vel" actuator="right_index_PIP_ctrl" />
+    <actuatorfrc name="right_index_PIP_frc" actuator="right_index_PIP_ctrl" />
+    <actuatorpos name="right_index_DIP_pos" actuator="right_index_DIP_ctrl" />
+    <actuatorvel name="right_index_DIP_vel" actuator="right_index_DIP_ctrl" />
+    <actuatorfrc name="right_index_DIP_frc" actuator="right_index_DIP_ctrl" />
+    <actuatorpos name="right_middle_MCP_FE_pos" actuator="right_middle_MCP_FE_ctrl" />
+    <actuatorvel name="right_middle_MCP_FE_vel" actuator="right_middle_MCP_FE_ctrl" />
+    <actuatorfrc name="right_middle_MCP_FE_frc" actuator="right_middle_MCP_FE_ctrl" />
+    <actuatorpos name="right_middle_MCP_AA_pos" actuator="right_middle_MCP_AA_ctrl" />
+    <actuatorvel name="right_middle_MCP_AA_vel" actuator="right_middle_MCP_AA_ctrl" />
+    <actuatorfrc name="right_middle_MCP_AA_frc" actuator="right_middle_MCP_AA_ctrl" />
+    <actuatorpos name="right_middle_PIP_pos" actuator="right_middle_PIP_ctrl" />
+    <actuatorvel name="right_middle_PIP_vel" actuator="right_middle_PIP_ctrl" />
+    <actuatorfrc name="right_middle_PIP_frc" actuator="right_middle_PIP_ctrl" />
+    <actuatorpos name="right_middle_DIP_pos" actuator="right_middle_DIP_ctrl" />
+    <actuatorvel name="right_middle_DIP_vel" actuator="right_middle_DIP_ctrl" />
+    <actuatorfrc name="right_middle_DIP_frc" actuator="right_middle_DIP_ctrl" />
+    <actuatorpos name="right_ring_MCP_FE_pos" actuator="right_ring_MCP_FE_ctrl" />
+    <actuatorvel name="right_ring_MCP_FE_vel" actuator="right_ring_MCP_FE_ctrl" />
+    <actuatorfrc name="right_ring_MCP_FE_frc" actuator="right_ring_MCP_FE_ctrl" />
+    <actuatorpos name="right_ring_MCP_AA_pos" actuator="right_ring_MCP_AA_ctrl" />
+    <actuatorvel name="right_ring_MCP_AA_vel" actuator="right_ring_MCP_AA_ctrl" />
+    <actuatorfrc name="right_ring_MCP_AA_frc" actuator="right_ring_MCP_AA_ctrl" />
+    <actuatorpos name="right_ring_PIP_pos" actuator="right_ring_PIP_ctrl" />
+    <actuatorvel name="right_ring_PIP_vel" actuator="right_ring_PIP_ctrl" />
+    <actuatorfrc name="right_ring_PIP_frc" actuator="right_ring_PIP_ctrl" />
+    <actuatorpos name="right_ring_DIP_pos" actuator="right_ring_DIP_ctrl" />
+    <actuatorvel name="right_ring_DIP_vel" actuator="right_ring_DIP_ctrl" />
+    <actuatorfrc name="right_ring_DIP_frc" actuator="right_ring_DIP_ctrl" />
+    <actuatorpos name="right_pinky_CMC_pos" actuator="right_pinky_CMC_ctrl" />
+    <actuatorvel name="right_pinky_CMC_vel" actuator="right_pinky_CMC_ctrl" />
+    <actuatorfrc name="right_pinky_CMC_frc" actuator="right_pinky_CMC_ctrl" />
+    <actuatorpos name="right_pinky_MCP_FE_pos" actuator="right_pinky_MCP_FE_ctrl" />
+    <actuatorvel name="right_pinky_MCP_FE_vel" actuator="right_pinky_MCP_FE_ctrl" />
+    <actuatorfrc name="right_pinky_MCP_FE_frc" actuator="right_pinky_MCP_FE_ctrl" />
+    <actuatorpos name="right_pinky_MCP_AA_pos" actuator="right_pinky_MCP_AA_ctrl" />
+    <actuatorvel name="right_pinky_MCP_AA_vel" actuator="right_pinky_MCP_AA_ctrl" />
+    <actuatorfrc name="right_pinky_MCP_AA_frc" actuator="right_pinky_MCP_AA_ctrl" />
+    <actuatorpos name="right_pinky_PIP_pos" actuator="right_pinky_PIP_ctrl" />
+    <actuatorvel name="right_pinky_PIP_vel" actuator="right_pinky_PIP_ctrl" />
+    <actuatorfrc name="right_pinky_PIP_frc" actuator="right_pinky_PIP_ctrl" />
+    <actuatorpos name="right_pinky_DIP_pos" actuator="right_pinky_DIP_ctrl" />
+    <actuatorvel name="right_pinky_DIP_vel" actuator="right_pinky_DIP_ctrl" />
+    <actuatorfrc name="right_pinky_DIP_frc" actuator="right_pinky_DIP_ctrl" />
+  </sensor>
+</mujoco>

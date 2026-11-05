@@ -1,0 +1,15 @@
+<mujoco model="north_scene">
+  <!-- NTH-HA1-precise-collision.xml defines visual geoms in group 2 and collision geoms in group 3.
+       Visual meshes: visual_meshes/.
+       Collision meshes: ../../../common/precise-collision/ and ../precise-collision/.
+       No assets depend on the former meshes/ directory. -->
+  <include file="NTH-HA1-precise-collision.xml"/>
+  <visual>
+    <global offwidth="1280" offheight="720"/>
+  </visual>
+  <worldbody>
+    <camera name="overview" pos="3 -3 2.2" xyaxes="0.707107 0.707107 0 -0.408248 0.408248 0.816497"/>
+    <geom name="ground" type="plane" size="10 10 0.1"
+          contype="4" conaffinity="0" friction="1.2 0.02 0.002"/>
+  </worldbody>
+</mujoco>

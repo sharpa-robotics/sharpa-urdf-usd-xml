@@ -1,0 +1,7 @@
+# Binary meshes and USD assets managed by Git LFS.
+*.[sS][tT][lL] filter=lfs diff=lfs merge=lfs -text
+*.usdc filter=lfs diff=lfs merge=lfs -text
+*.usdz filter=lfs diff=lfs merge=lfs -text
+
+# Keep robot descriptions on LF across platforms.
+*.urdf text eol=lf
