@@ -1,5 +1,5 @@
 <mujoco model="dual_sharpa_wave">
-  <compiler angle="radian" meshdir=""/>
+  <compiler angle="radian" meshdir="../"/>
 
   <asset>
     <mesh name="left_flange" file="left_sharpa_wave/meshes/flange_B.STL"/>
