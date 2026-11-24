@@ -43,6 +43,9 @@
 1. Currently, `armature`, `frictionloss`, `actuatorfrcrange`, and `damping` are set based on the calibration results from IsaacLab, which have been verified to be quite close to those of the real robot.   
 2. For rigid body collision parameters, everything is set to default except for the fingertip elastomer, which has a modified `solref` to make it softer and more elastic. Please contact lei.su@sharpa.com if you notice any issues.  
 
+### Firmware joint limits
+Joint limits are enforced in the firmware to prevent collisions caused by exceeding the physical robot’s mechanical range of motion. The same limits can be applied in simulation to ensure consistency with the real robot. For W01, see wave_01/W01_firmware_joint_limits/README.md.
+
 ## RViz Instructions
 1. Install ROS2 and RViz2.  
 2. In the `SharpaWave_URDF_XML_USD` folder, run:  
