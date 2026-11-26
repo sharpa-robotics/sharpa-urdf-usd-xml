@@ -1,0 +1,468 @@
+<mujoco model="right_sharpa_wave_high_res">
+  <!-- V6: 56 explicitly exported convex collision meshes. Visuals group 1; collisions group 3. Body tree, inertials, joints, passive dynamics, and collision exclusions: wave01/right_sharpa_wave/right_sharpa_wave.xml. Collision geometry: manual_decompose_v6 cooked hulls. Elastomer hulls are expressed in their parent DP frames and retain elastomer_geom solref. Sliding friction follows right_sharpa_wave_MITmode.usda physics materials; friction > 0.5 uses condim 4. -->
+  <!-- Actuator kp and dampratio copied by joint name from wave01/right_sharpa_wave/right_sharpa_wave.xml. -->
+  <compiler angle="radian" meshdir="Mujoco/meshes" texturedir="Mujoco/textures" />
+  <asset>
+    <mesh name="right_hand_C_MC_visual_000" file="right_hand_C_MC_visual_000.obj" inertia="shell" />
+    <texture name="tex_normal_7ed737774c10" type="2d" file="T_Metal_N001_7ed737774c10.png" nchannel="3" colorspace="linear" />
+    <material name="material_00" rgba="0.7593809949 0.7417776161 0.7183117742 1" specular="0.5" shininess="0.5300000012" metallic="1" roughness="0.4699999988">
+      <layer role="normal" texture="tex_normal_7ed737774c10" />
+    </material>
+    <mesh name="right_hand_C_MC_visual_001" file="right_hand_C_MC_visual_001.obj" inertia="shell" />
+    <material name="material_01" rgba="0.4939611435 0.4939588548 0.4939588548 1" specular="0.04" shininess="0.234375" metallic="0" roughness="0.5" />
+    <mesh name="right_hand_C_MC_visual_002" file="right_hand_C_MC_visual_002.obj" inertia="shell" />
+    <material name="material_02" rgba="0.4243519321 0.4063673969 0.3762984934 1" specular="0.5" shininess="0.5200000107" metallic="1" roughness="0.4799999893" />
+    <mesh name="right_hand_C_MC_visual_003" file="right_hand_C_MC_visual_003.obj" inertia="shell" />
+    <material name="material_03" rgba="0.3844658317 0.6131772167 0.9020655233 1" specular="0.5" shininess="0.5" metallic="0" roughness="0.5" emission="1" />
+    <mesh name="right_hand_C_MC_visual_004" file="right_hand_C_MC_visual_004.obj" inertia="shell" />
+    <material name="material_04" rgba="0.9563096932 0.9563054677 0.9563054677 1" specular="0.5" shininess="0.4700000286" metallic="0" roughness="0.5299999714">
+      <layer role="normal" texture="tex_normal_7ed737774c10" />
+    </material>
+    <mesh name="right_index_DP_visual_005" file="right_index_DP_visual_005.obj" inertia="shell" />
+    <texture name="tex_rgb_da2cf15bb380" type="2d" file="DefaultMaterial_Base_color_da2cf15bb380_gutter24.png" nchannel="3" colorspace="linear" />
+    <texture name="tex_normal_6f2d23996ed0" type="2d" file="DefaultMaterial_Normal_OpenGL_6f2d23996ed0.png" nchannel="3" colorspace="linear" />
+    <texture name="tex_roughness_4f5e04a709c3" type="2d" file="DefaultMaterial_Roughness_4f5e04a709c3.png" nchannel="3" colorspace="linear" />
+    <material name="material_05" texuniform="false" texrepeat="1 1" rgba="1 1 1 1" specular="0.04" shininess="1" metallic="0" roughness="0.2980392157">
+      <layer role="rgb" texture="tex_rgb_da2cf15bb380" />
+      <layer role="normal" texture="tex_normal_6f2d23996ed0" />
+      <layer role="roughness" texture="tex_roughness_4f5e04a709c3" />
+    </material>
+    <mesh name="right_index_DP_visual_006" file="right_index_DP_visual_006.obj" inertia="shell" />
+    <mesh name="right_index_DP_visual_007" file="right_index_DP_visual_007.obj" inertia="shell" />
+    <material name="material_06" texuniform="false" texrepeat="1 1" rgba="1 1 1 1" specular="0.04" shininess="0.6210169713" metallic="0" roughness="0.3958049214">
+      <layer role="rgb" texture="tex_rgb_da2cf15bb380" />
+      <layer role="normal" texture="tex_normal_6f2d23996ed0" />
+      <layer role="roughness" texture="tex_roughness_4f5e04a709c3" />
+    </material>
+    <mesh name="right_index_MCP_VL_visual_008" file="right_index_MCP_VL_visual_008.obj" inertia="shell" />
+    <material name="material_07" rgba="0.6273043702 0.6204971379 0.6150771122 1" specular="0.5" shininess="0.7300000191" metallic="1" roughness="0.2699999809" />
+    <mesh name="right_index_MCP_VL_visual_009" file="right_index_MCP_VL_visual_009.obj" inertia="shell" />
+    <mesh name="right_index_MP_visual_010" file="right_index_MP_visual_010.obj" inertia="shell" />
+    <mesh name="right_index_MP_visual_011" file="right_index_MP_visual_011.obj" inertia="shell" />
+    <mesh name="right_index_MP_visual_012" file="right_index_MP_visual_012.obj" inertia="shell" />
+    <mesh name="right_index_PP_visual_013" file="right_index_PP_visual_013.obj" inertia="shell" />
+    <mesh name="right_index_PP_visual_014" file="right_index_PP_visual_014.obj" inertia="shell" />
+    <mesh name="right_index_PP_visual_015" file="right_index_PP_visual_015.obj" inertia="shell" />
+    <mesh name="right_middle_DP_visual_016" file="right_middle_DP_visual_016.obj" inertia="shell" />
+    <mesh name="right_middle_DP_visual_017" file="right_middle_DP_visual_017.obj" inertia="shell" />
+    <material name="material_08" texuniform="false" texrepeat="1 1" rgba="1 1 1 1" specular="0.04" shininess="0.6210169713" metallic="0" roughness="0.3958049214">
+      <layer role="rgb" texture="tex_rgb_da2cf15bb380" />
+      <layer role="normal" texture="tex_normal_6f2d23996ed0" />
+      <layer role="roughness" texture="tex_roughness_4f5e04a709c3" />
+    </material>
+    <mesh name="right_middle_DP_visual_018" file="right_middle_DP_visual_018.obj" inertia="shell" />
+    <material name="material_09" texuniform="false" texrepeat="1 1" rgba="1 1 1 1" specular="0.04" shininess="1" metallic="0" roughness="0.2980392157">
+      <layer role="rgb" texture="tex_rgb_da2cf15bb380" />
+      <layer role="normal" texture="tex_normal_6f2d23996ed0" />
+      <layer role="roughness" texture="tex_roughness_4f5e04a709c3" />
+    </material>
+    <mesh name="right_middle_MCP_VL_visual_019" file="right_middle_MCP_VL_visual_019.obj" inertia="shell" />
+    <mesh name="right_middle_MCP_VL_visual_020" file="right_middle_MCP_VL_visual_020.obj" inertia="shell" />
+    <mesh name="right_middle_MP_visual_021" file="right_middle_MP_visual_021.obj" inertia="shell" />
+    <mesh name="right_middle_MP_visual_022" file="right_middle_MP_visual_022.obj" inertia="shell" />
+    <mesh name="right_middle_MP_visual_023" file="right_middle_MP_visual_023.obj" inertia="shell" />
+    <mesh name="right_middle_PP_visual_024" file="right_middle_PP_visual_024.obj" inertia="shell" />
+    <mesh name="right_middle_PP_visual_025" file="right_middle_PP_visual_025.obj" inertia="shell" />
+    <mesh name="right_middle_PP_visual_026" file="right_middle_PP_visual_026.obj" inertia="shell" />
+    <mesh name="right_pinky_DP_visual_027" file="right_pinky_DP_visual_027.obj" inertia="shell" />
+    <material name="material_10" texuniform="false" texrepeat="1 1" rgba="1 1 1 1" specular="0.04" shininess="1" metallic="0" roughness="0.2980392157">
+      <layer role="rgb" texture="tex_rgb_da2cf15bb380" />
+      <layer role="normal" texture="tex_normal_6f2d23996ed0" />
+      <layer role="roughness" texture="tex_roughness_4f5e04a709c3" />
+    </material>
+    <mesh name="right_pinky_DP_visual_028" file="right_pinky_DP_visual_028.obj" inertia="shell" />
+    <mesh name="right_pinky_DP_visual_029" file="right_pinky_DP_visual_029.obj" inertia="shell" />
+    <material name="material_11" texuniform="false" texrepeat="1 1" rgba="1 1 1 1" specular="0.04" shininess="0.6210169713" metallic="0" roughness="0.3958049214">
+      <layer role="rgb" texture="tex_rgb_da2cf15bb380" />
+      <layer role="normal" texture="tex_normal_6f2d23996ed0" />
+      <layer role="roughness" texture="tex_roughness_4f5e04a709c3" />
+    </material>
+    <mesh name="right_pinky_MC_visual_030" file="right_pinky_MC_visual_030.obj" inertia="shell" />
+    <mesh name="right_pinky_MC_visual_031" file="right_pinky_MC_visual_031.obj" inertia="shell" />
+    <mesh name="right_pinky_MC_visual_032" file="right_pinky_MC_visual_032.obj" inertia="shell" />
+    <mesh name="right_pinky_MCP_VL_visual_033" file="right_pinky_MCP_VL_visual_033.obj" inertia="shell" />
+    <mesh name="right_pinky_MCP_VL_visual_034" file="right_pinky_MCP_VL_visual_034.obj" inertia="shell" />
+    <mesh name="right_pinky_MP_visual_035" file="right_pinky_MP_visual_035.obj" inertia="shell" />
+    <mesh name="right_pinky_MP_visual_036" file="right_pinky_MP_visual_036.obj" inertia="shell" />
+    <mesh name="right_pinky_MP_visual_037" file="right_pinky_MP_visual_037.obj" inertia="shell" />
+    <mesh name="right_pinky_PP_visual_038" file="right_pinky_PP_visual_038.obj" inertia="shell" />
+    <mesh name="right_pinky_PP_visual_039" file="right_pinky_PP_visual_039.obj" inertia="shell" />
+    <mesh name="right_pinky_PP_visual_040" file="right_pinky_PP_visual_040.obj" inertia="shell" />
+    <mesh name="right_ring_DP_visual_041" file="right_ring_DP_visual_041.obj" inertia="shell" />
+    <mesh name="right_ring_DP_visual_042" file="right_ring_DP_visual_042.obj" inertia="shell" />
+    <material name="material_12" texuniform="false" texrepeat="1 1" rgba="1 1 1 1" specular="0.04" shininess="0.6210169713" metallic="0" roughness="0.3958049214">
+      <layer role="rgb" texture="tex_rgb_da2cf15bb380" />
+      <layer role="normal" texture="tex_normal_6f2d23996ed0" />
+      <layer role="roughness" texture="tex_roughness_4f5e04a709c3" />
+    </material>
+    <mesh name="right_ring_DP_visual_043" file="right_ring_DP_visual_043.obj" inertia="shell" />
+    <material name="material_13" texuniform="false" texrepeat="1 1" rgba="1 1 1 1" specular="0.04" shininess="1" metallic="0" roughness="0.2980392157">
+      <layer role="rgb" texture="tex_rgb_da2cf15bb380" />
+      <layer role="normal" texture="tex_normal_6f2d23996ed0" />
+      <layer role="roughness" texture="tex_roughness_4f5e04a709c3" />
+    </material>
+    <mesh name="right_ring_MCP_VL_visual_044" file="right_ring_MCP_VL_visual_044.obj" inertia="shell" />
+    <mesh name="right_ring_MCP_VL_visual_045" file="right_ring_MCP_VL_visual_045.obj" inertia="shell" />
+    <mesh name="right_ring_MP_visual_046" file="right_ring_MP_visual_046.obj" inertia="shell" />
+    <mesh name="right_ring_MP_visual_047" file="right_ring_MP_visual_047.obj" inertia="shell" />
+    <mesh name="right_ring_MP_visual_048" file="right_ring_MP_visual_048.obj" inertia="shell" />
+    <mesh name="right_ring_PP_visual_049" file="right_ring_PP_visual_049.obj" inertia="shell" />
+    <mesh name="right_ring_PP_visual_050" file="right_ring_PP_visual_050.obj" inertia="shell" />
+    <mesh name="right_ring_PP_visual_051" file="right_ring_PP_visual_051.obj" inertia="shell" />
+    <mesh name="right_thumb_CMC_VL_visual_052" file="right_thumb_CMC_VL_visual_052.obj" inertia="shell" />
+    <mesh name="right_thumb_DP_visual_053" file="right_thumb_DP_visual_053.obj" inertia="shell" />
+    <mesh name="right_thumb_DP_visual_054" file="right_thumb_DP_visual_054.obj" inertia="shell" />
+    <mesh name="right_thumb_DP_visual_055" file="right_thumb_DP_visual_055.obj" inertia="shell" />
+    <mesh name="right_thumb_MC_visual_056" file="right_thumb_MC_visual_056.obj" inertia="shell" />
+    <mesh name="right_thumb_MC_visual_057" file="right_thumb_MC_visual_057.obj" inertia="shell" />
+    <mesh name="right_thumb_MCP_VL_visual_058" file="right_thumb_MCP_VL_visual_058.obj" inertia="shell" />
+    <mesh name="right_thumb_PP_visual_059" file="right_thumb_PP_visual_059.obj" inertia="shell" />
+    <mesh name="right_thumb_PP_visual_060" file="right_thumb_PP_visual_060.obj" inertia="shell" />
+    <mesh name="right_thumb_PP_visual_061" file="right_thumb_PP_visual_061.obj" inertia="shell" />
+    <mesh name="piece_000_right_hand_C_MC_gray_002_shell_000" file="piece_000_right_hand_C_MC_gray_002_shell_000.obj" />
+    <mesh name="piece_001_right_hand_C_MC_gray_002_shell_001" file="piece_001_right_hand_C_MC_gray_002_shell_001.obj" />
+    <mesh name="piece_002_right_hand_C_MC_gray_002_shell_002" file="piece_002_right_hand_C_MC_gray_002_shell_002.obj" />
+    <mesh name="piece_003_right_hand_C_MC_gray_002_shell_003" file="piece_003_right_hand_C_MC_gray_002_shell_003.obj" />
+    <mesh name="piece_004_right_hand_C_MC_gray_002_shell_004" file="piece_004_right_hand_C_MC_gray_002_shell_004.obj" />
+    <mesh name="piece_005_right_hand_C_MC_gray_002_shell_005" file="piece_005_right_hand_C_MC_gray_002_shell_005.obj" />
+    <mesh name="piece_006_right_hand_C_MC_remaining_body_000" file="piece_006_right_hand_C_MC_remaining_body_000.obj" />
+    <mesh name="piece_007_right_hand_C_MC_remaining_body_001" file="piece_007_right_hand_C_MC_remaining_body_001.obj" />
+    <mesh name="piece_008_right_hand_C_MC_remaining_body_002" file="piece_008_right_hand_C_MC_remaining_body_002.obj" />
+    <mesh name="piece_009_right_hand_C_MC_remaining_body_003" file="piece_009_right_hand_C_MC_remaining_body_003.obj" />
+    <mesh name="piece_010_right_hand_C_MC_remaining_body_004" file="piece_010_right_hand_C_MC_remaining_body_004.obj" />
+    <mesh name="piece_011_right_hand_C_MC_remaining_body_007" file="piece_011_right_hand_C_MC_remaining_body_007.obj" />
+    <mesh name="piece_012_right_hand_C_MC_remaining_body_011" file="piece_012_right_hand_C_MC_remaining_body_011.obj" />
+    <mesh name="piece_013_right_hand_C_MC_remaining_body_012" file="piece_013_right_hand_C_MC_remaining_body_012.obj" />
+    <mesh name="piece_014_right_hand_C_MC_remaining_body_016" file="piece_014_right_hand_C_MC_remaining_body_016.obj" />
+    <mesh name="piece_015_right_hand_C_MC_remaining_body_017" file="piece_015_right_hand_C_MC_remaining_body_017.obj" />
+    <mesh name="piece_016_right_hand_C_MC_remaining_body_018" file="piece_016_right_hand_C_MC_remaining_body_018.obj" />
+    <mesh name="piece_017_right_hand_C_MC_remaining_body_019" file="piece_017_right_hand_C_MC_remaining_body_019.obj" />
+    <mesh name="piece_018_right_hand_C_MC_remaining_body_020" file="piece_018_right_hand_C_MC_remaining_body_020.obj" />
+    <mesh name="piece_019_right_index_DP_hull_000" file="piece_019_right_index_DP_hull_000.obj" />
+    <mesh name="piece_020_right_index_MCP_VL_hull_000" file="piece_020_right_index_MCP_VL_hull_000.obj" />
+    <mesh name="piece_021_right_index_MP_hull_000" file="piece_021_right_index_MP_hull_000.obj" />
+    <mesh name="piece_022_right_index_MP_hull_000" file="piece_022_right_index_MP_hull_000.obj" />
+    <mesh name="piece_023_right_index_PP_hull_000" file="piece_023_right_index_PP_hull_000.obj" />
+    <mesh name="piece_024_right_index_PP_hull_000" file="piece_024_right_index_PP_hull_000.obj" />
+    <mesh name="piece_025_right_middle_DP_hull_000" file="piece_025_right_middle_DP_hull_000.obj" />
+    <mesh name="piece_026_right_middle_MCP_VL_hull_000" file="piece_026_right_middle_MCP_VL_hull_000.obj" />
+    <mesh name="piece_027_right_middle_MP_hull_000" file="piece_027_right_middle_MP_hull_000.obj" />
+    <mesh name="piece_028_right_middle_MP_hull_000" file="piece_028_right_middle_MP_hull_000.obj" />
+    <mesh name="piece_029_right_middle_PP_hull_000" file="piece_029_right_middle_PP_hull_000.obj" />
+    <mesh name="piece_030_right_middle_PP_hull_000" file="piece_030_right_middle_PP_hull_000.obj" />
+    <mesh name="piece_031_right_pinky_DP_hull_000" file="piece_031_right_pinky_DP_hull_000.obj" />
+    <mesh name="piece_032_right_pinky_MC_hull_000" file="piece_032_right_pinky_MC_hull_000.obj" />
+    <mesh name="piece_033_right_pinky_MC_hull_000" file="piece_033_right_pinky_MC_hull_000.obj" />
+    <mesh name="piece_034_right_pinky_MCP_VL_hull_000" file="piece_034_right_pinky_MCP_VL_hull_000.obj" />
+    <mesh name="piece_035_right_pinky_MP_hull_000" file="piece_035_right_pinky_MP_hull_000.obj" />
+    <mesh name="piece_036_right_pinky_MP_hull_000" file="piece_036_right_pinky_MP_hull_000.obj" />
+    <mesh name="piece_037_right_pinky_PP_hull_000" file="piece_037_right_pinky_PP_hull_000.obj" />
+    <mesh name="piece_038_right_pinky_PP_hull_000" file="piece_038_right_pinky_PP_hull_000.obj" />
+    <mesh name="piece_039_right_ring_DP_hull_000" file="piece_039_right_ring_DP_hull_000.obj" />
+    <mesh name="piece_040_right_ring_MCP_VL_hull_000" file="piece_040_right_ring_MCP_VL_hull_000.obj" />
+    <mesh name="piece_041_right_ring_MP_hull_000" file="piece_041_right_ring_MP_hull_000.obj" />
+    <mesh name="piece_042_right_ring_MP_hull_000" file="piece_042_right_ring_MP_hull_000.obj" />
+    <mesh name="piece_043_right_ring_PP_hull_000" file="piece_043_right_ring_PP_hull_000.obj" />
+    <mesh name="piece_044_right_ring_PP_hull_000" file="piece_044_right_ring_PP_hull_000.obj" />
+    <mesh name="piece_045_right_thumb_CMC_VL_hull_000" file="piece_045_right_thumb_CMC_VL_hull_000.obj" />
+    <mesh name="piece_046_right_thumb_DP_hull_000" file="piece_046_right_thumb_DP_hull_000.obj" />
+    <mesh name="piece_047_right_thumb_MC_hull_000" file="piece_047_right_thumb_MC_hull_000.obj" />
+    <mesh name="piece_048_right_thumb_MCP_VL_hull_000" file="piece_048_right_thumb_MCP_VL_hull_000.obj" />
+    <mesh name="piece_049_right_thumb_PP_hull_000" file="piece_049_right_thumb_PP_hull_000.obj" />
+    <mesh name="piece_050_right_thumb_PP_hull_000" file="piece_050_right_thumb_PP_hull_000.obj" />
+    <mesh name="piece_051_right_middle_elastomer_elastomer_000" file="piece_051_right_middle_elastomer_elastomer_000.obj" />
+    <mesh name="piece_052_right_pinky_elastomer_elastomer_000" file="piece_052_right_pinky_elastomer_elastomer_000.obj" />
+    <mesh name="piece_053_right_ring_elastomer_elastomer_000" file="piece_053_right_ring_elastomer_elastomer_000.obj" />
+    <mesh name="piece_054_right_thumb_elastomer_elastomer_000" file="piece_054_right_thumb_elastomer_elastomer_000.obj" />
+    <mesh name="piece_055_right_index_elastomer_elastomer_000" file="piece_055_right_index_elastomer_elastomer_000.obj" />
+  </asset>
+  <default>
+    <default class="CMC_joint">
+      <joint armature="0.0032" frictionloss="0.132" damping="4.20E-05" />
+    </default>
+    <default class="PCMC_joint">
+      <joint armature="0.00012" frictionloss="0.012" damping="4.20E-05" />
+    </default>
+    <default class="MCP_joint">
+      <joint armature="0.00265" frictionloss="0.07456" damping="2.38E-05" />
+    </default>
+    <default class="PIP_joint">
+      <joint armature="0.0006" frictionloss="0.01276" damping="4.06E-06" />
+    </default>
+    <default class="DIP_joint">
+      <joint armature="0.00042" frictionloss="0.00378738" damping="1.21E-06" />
+    </default>
+    <default class="elastomer_geom">
+      <geom solref="0.06 0.9" />
+    </default>
+  </default>
+  <worldbody>
+    <body name="right_hand_C_MC" pos="0 0 0">
+      <inertial pos="-0.00216 0.00536 0.04011" quat="0.713832 -0.0659364 0.0757239 0.693082" mass="0.6506" diaginertia="0.000814964 0.000674257 0.00027314" />
+      <body name="right_thumb_CMC_VL" pos="0.01 0.026 0.0214" quat="-2.59734e-06 0.707105 0.707108 -2.59735e-06">
+        <inertial pos="-0.00065 0.0002 0" quat="0.434754 0.557664 -0.434754 0.557664" mass="0.0025" diaginertia="2.6e-07 2.12661e-07 1.34339e-07" />
+        <joint name="right_thumb_CMC_FE" pos="0 0 0" axis="0 0 1" range="-0.1745 1.9199" class="CMC_joint" />
+        <body name="right_thumb_MC" pos="0 -0.005 0" quat="0.65328 -0.653282 0.270598 0.270599">
+          <inertial pos="0.03643 -0.01024 0.00517" quat="-0.151259 0.696943 -0.154462 0.683763" mass="0.13587" diaginertia="4.69153e-05 4.29066e-05 1.92101e-05" />
+          <joint name="right_thumb_CMC_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" class="CMC_joint" />
+          <body name="right_thumb_MCP_VL" pos="0.065 -0.006 0.010392" quat="0.965926 0.25882 0 0">
+            <inertial pos="-1.29e-09 -1.1e-10 0" quat="0.515163 0.484363 -0.515163 0.484363" mass="0.0025" diaginertia="2.6e-07 2.12661e-07 1.34339e-07" />
+            <joint name="right_thumb_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.5236 1.3963" class="MCP_joint" />
+            <body name="right_thumb_PP" quat="0.707105 -0.707108 0 0">
+              <inertial pos="0.021256 -0.00095 -0.00092" quat="0.44358 0.511613 0.483631 0.554609" mass="0.03078" diaginertia="6.08344e-06 5.91207e-06 1.22148e-06" />
+              <joint name="right_thumb_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" class="MCP_joint" />
+              <body name="right_thumb_DP" pos="0.039 0 0" quat="0.707105 0.707108 0 0">
+                <inertial pos="0.00821817 -0.00177722 -0.000997218" quat="-0.255985 0.713848 -0.187441 0.624306" mass="0.007981" diaginertia="1.0905e-06 1.04136e-06 2.95182e-07" />
+                <joint name="right_thumb_IP" pos="0 0 0" axis="0 0 1" range="0 1.7453" class="PIP_joint" />
+                <geom name="right_thumb_DP_visual_053" type="mesh" mesh="right_thumb_DP_visual_053" contype="0" conaffinity="0" group="1" density="0" />
+                <geom name="right_thumb_DP_visual_054" type="mesh" mesh="right_thumb_DP_visual_054" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+                <geom name="right_thumb_DP_visual_055" type="mesh" mesh="right_thumb_DP_visual_055" contype="0" conaffinity="0" group="1" density="0" />
+                <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.9287635816 0.2688 0.96 1" mesh="piece_046_right_thumb_DP_hull_000" name="piece_046_right_thumb_DP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+                <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.5096829207 0.1332 0.74 1" mesh="piece_054_right_thumb_elastomer_elastomer_000" name="piece_054_right_thumb_elastomer_elastomer_000" class="elastomer_geom" density="0" friction="0.8 0.005 0.0001" condim="4" />
+              </body>
+              <geom name="right_thumb_PP_visual_059" type="mesh" mesh="right_thumb_PP_visual_059" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+              <geom name="right_thumb_PP_visual_060" type="mesh" mesh="right_thumb_PP_visual_060" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+              <geom name="right_thumb_PP_visual_061" type="mesh" mesh="right_thumb_PP_visual_061" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+              <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.3236952561 0.2688 0.96 1" mesh="piece_049_right_thumb_PP_hull_000" name="piece_049_right_thumb_PP_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+              <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.4364100773 0.88 0.3168 1" mesh="piece_050_right_thumb_PP_hull_000" name="piece_050_right_thumb_PP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+            </body>
+            <geom name="right_thumb_MCP_VL_visual_058" type="mesh" mesh="right_thumb_MCP_VL_visual_058" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+            <geom contype="1" conaffinity="1" group="3" name="piece_048_right_thumb_MCP_VL_hull_000" type="mesh" mesh="piece_048_right_thumb_MCP_VL_hull_000" density="0" rgba="0.74 0.3584540433 0.1332 1" friction="0.1 0.005 0.0001" condim="3" />
+          </body>
+          <geom name="right_thumb_MC_visual_056" type="mesh" mesh="right_thumb_MC_visual_056" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+          <geom name="right_thumb_MC_visual_057" type="mesh" mesh="right_thumb_MC_visual_057" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+          <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.3168 0.88 0.6902085583 1" mesh="piece_047_right_thumb_MC_hull_000" name="piece_047_right_thumb_MC_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+        </body>
+        <geom name="right_thumb_CMC_VL_visual_052" type="mesh" mesh="right_thumb_CMC_VL_visual_052" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+        <geom contype="1" conaffinity="1" group="3" name="piece_045_right_thumb_CMC_VL_hull_000" type="mesh" mesh="piece_045_right_thumb_CMC_VL_hull_000" density="0" rgba="0.5903603955 0.74 0.1332 1" friction="0.1 0.005 0.0001" condim="3" />
+      </body>
+      <body name="right_index_MCP_VL" pos="0.001 0.0303 0.0959" quat="0.499998 -0.500002 -0.5 -0.5">
+        <inertial pos="-0.0092 0.0013 0" quat="0.519686 0.479506 -0.519686 0.479506" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+        <joint name="right_index_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" class="MCP_joint" />
+        <body name="right_index_PP" quat="0.707105 -0.707108 0 0">
+          <inertial pos="0.027 0.00055 0.00068" quat="0.512565 0.504813 0.502719 0.479286" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+          <joint name="right_index_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" class="MCP_joint" />
+          <body name="right_index_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+            <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+            <joint name="right_index_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" class="PIP_joint" />
+            <body name="right_index_DP" pos="0.0315 0 0">
+              <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+              <joint name="right_index_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" class="DIP_joint" />
+              <geom name="right_index_DP_visual_005" type="mesh" mesh="right_index_DP_visual_005" contype="0" conaffinity="0" group="1" density="0" material="material_05" />
+              <geom name="right_index_DP_visual_006" type="mesh" mesh="right_index_DP_visual_006" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+              <geom name="right_index_DP_visual_007" type="mesh" mesh="right_index_DP_visual_007" contype="0" conaffinity="0" group="1" density="0" material="material_06" />
+              <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.96 0.8447785117 0.2688 1" mesh="piece_019_right_index_DP_hull_000" name="piece_019_right_index_DP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+              <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.2688 0.96 0.4959586049 1" mesh="piece_055_right_index_elastomer_elastomer_000" name="piece_055_right_index_elastomer_elastomer_000" class="elastomer_geom" density="0" friction="0.8 0.005 0.0001" condim="4" />
+            </body>
+            <geom name="right_index_MP_visual_010" type="mesh" mesh="right_index_MP_visual_010" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+            <geom name="right_index_MP_visual_011" type="mesh" mesh="right_index_MP_visual_011" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+            <geom name="right_index_MP_visual_012" type="mesh" mesh="right_index_MP_visual_012" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+            <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.1332 0.74 0.2847240947 1" mesh="piece_021_right_index_MP_hull_000" name="piece_021_right_index_MP_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+            <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.96 0.2688 0.2978898138 1" mesh="piece_022_right_index_MP_hull_000" name="piece_022_right_index_MP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+          </body>
+          <geom name="right_index_PP_visual_013" type="mesh" mesh="right_index_PP_visual_013" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+          <geom name="right_index_PP_visual_014" type="mesh" mesh="right_index_PP_visual_014" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+          <geom name="right_index_PP_visual_015" type="mesh" mesh="right_index_PP_visual_015" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+          <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.3168 0.5048423565 0.88 1" mesh="piece_023_right_index_PP_hull_000" name="piece_023_right_index_PP_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+          <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.5128614665 0.74 0.1332 1" mesh="piece_024_right_index_PP_hull_000" name="piece_024_right_index_PP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+        </body>
+        <geom name="right_index_MCP_VL_visual_008" type="mesh" mesh="right_index_MCP_VL_visual_008" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+        <geom name="right_index_MCP_VL_visual_009" type="mesh" mesh="right_index_MCP_VL_visual_009" contype="0" conaffinity="0" group="1" density="0" material="material_02" />
+        <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.6217762792 0.3168 0.88 1" mesh="piece_020_right_index_MCP_VL_hull_000" name="piece_020_right_index_MCP_VL_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      </body>
+      <body name="right_middle_MCP_VL" pos="0 0.01 0.0989" quat="0.499998 -0.500002 -0.5 -0.5">
+        <inertial pos="-0.0092 0.0013 0" quat="0.519686 0.479506 -0.519686 0.479506" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+        <joint name="right_middle_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" class="MCP_joint" />
+        <body name="right_middle_PP" quat="0.707105 -0.707108 0 0">
+          <inertial pos="0.027 0.00055 0.00068" quat="0.512565 0.504813 0.502719 0.479286" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+          <joint name="right_middle_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" class="MCP_joint" />
+          <body name="right_middle_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+            <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+            <joint name="right_middle_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" class="PIP_joint" />
+            <body name="right_middle_DP" pos="0.0315 0 0">
+              <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+              <joint name="right_middle_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" class="DIP_joint" />
+              <geom name="right_middle_DP_visual_016" type="mesh" mesh="right_middle_DP_visual_016" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+              <geom name="right_middle_DP_visual_017" type="mesh" mesh="right_middle_DP_visual_017" contype="0" conaffinity="0" group="1" density="0" material="material_08" />
+              <geom name="right_middle_DP_visual_018" type="mesh" mesh="right_middle_DP_visual_018" contype="0" conaffinity="0" group="1" density="0" material="material_09" />
+              <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.96 0.2688 0.9029581394 1" mesh="piece_025_right_middle_DP_hull_000" name="piece_025_right_middle_DP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+              <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.74 0.1332 0.439131518 1" mesh="piece_051_right_middle_elastomer_elastomer_000" name="piece_051_right_middle_elastomer_elastomer_000" class="elastomer_geom" density="0" friction="0.8 0.005 0.0001" condim="4" />
+            </body>
+            <geom name="right_middle_MP_visual_021" type="mesh" mesh="right_middle_MP_visual_021" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+            <geom name="right_middle_MP_visual_022" type="mesh" mesh="right_middle_MP_visual_022" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+            <geom name="right_middle_MP_visual_023" type="mesh" mesh="right_middle_MP_visual_023" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+            <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.74 0.4359529722 0.1332 1" mesh="piece_027_right_middle_MP_hull_000" name="piece_027_right_middle_MP_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+            <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.411973535 0.2688 0.96 1" mesh="piece_028_right_middle_MP_hull_000" name="piece_028_right_middle_MP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+          </body>
+          <geom name="right_middle_PP_visual_024" type="mesh" mesh="right_middle_PP_visual_024" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+          <geom name="right_middle_PP_visual_025" type="mesh" mesh="right_middle_PP_visual_025" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+          <geom name="right_middle_PP_visual_026" type="mesh" mesh="right_middle_PP_visual_026" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+          <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.3644796278 0.88 0.3168 1" mesh="piece_029_right_middle_PP_hull_000" name="piece_029_right_middle_PP_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+          <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.74 0.1332 0.3616325891 1" mesh="piece_030_right_middle_PP_hull_000" name="piece_030_right_middle_PP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+        </body>
+        <geom name="right_middle_MCP_VL_visual_019" type="mesh" mesh="right_middle_MCP_VL_visual_019" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+        <geom name="right_middle_MCP_VL_visual_020" type="mesh" mesh="right_middle_MCP_VL_visual_020" contype="0" conaffinity="0" group="1" density="0" material="material_02" />
+        <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.3168 0.88 0.7621390079 1" mesh="piece_026_right_middle_MCP_VL_hull_000" name="piece_026_right_middle_MCP_VL_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      </body>
+      <body name="right_ring_MCP_VL" pos="0.0015 -0.0103 0.0929" quat="0.499998 -0.500002 -0.5 -0.5">
+        <inertial pos="-0.0092 0.0013 0" quat="0.519686 0.479506 -0.519686 0.479506" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+        <joint name="right_ring_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" class="MCP_joint" />
+        <body name="right_ring_PP" quat="0.707105 -0.707108 0 0">
+          <inertial pos="0.027 0.00055 0.00068" quat="0.512565 0.504813 0.502719 0.479286" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+          <joint name="right_ring_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" class="MCP_joint" />
+          <body name="right_ring_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+            <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+            <joint name="right_ring_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" class="PIP_joint" />
+            <body name="right_ring_DP" pos="0.0315 0 0">
+              <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+              <joint name="right_ring_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" class="DIP_joint" />
+              <geom name="right_ring_DP_visual_041" type="mesh" mesh="right_ring_DP_visual_041" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+              <geom name="right_ring_DP_visual_042" type="mesh" mesh="right_ring_DP_visual_042" contype="0" conaffinity="0" group="1" density="0" material="material_12" />
+              <geom name="right_ring_DP_visual_043" type="mesh" mesh="right_ring_DP_visual_043" contype="0" conaffinity="0" group="1" density="0" material="material_13" />
+              <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.1332 0.74 0.7384107271 1" mesh="piece_039_right_ring_DP_hull_000" name="piece_039_right_ring_DP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+              <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.88 0.830571287 0.3168 1" mesh="piece_053_right_ring_elastomer_elastomer_000" name="piece_053_right_ring_elastomer_elastomer_000" class="elastomer_geom" density="0" friction="0.8 0.005 0.0001" condim="4" />
+            </body>
+            <geom name="right_ring_MP_visual_046" type="mesh" mesh="right_ring_MP_visual_046" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+            <geom name="right_ring_MP_visual_047" type="mesh" mesh="right_ring_MP_visual_047" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+            <geom name="right_ring_MP_visual_048" type="mesh" mesh="right_ring_MP_visual_048" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+            <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.5498458296 0.3168 0.88 1" mesh="piece_041_right_ring_MP_hull_000" name="piece_041_right_ring_MP_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+            <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.1332 0.74 0.2072251658 1" mesh="piece_042_right_ring_MP_hull_000" name="piece_042_right_ring_MP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+          </body>
+          <geom name="right_ring_PP_visual_049" type="mesh" mesh="right_ring_PP_visual_049" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+          <geom name="right_ring_PP_visual_050" type="mesh" mesh="right_ring_PP_visual_050" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+          <geom name="right_ring_PP_visual_051" type="mesh" mesh="right_ring_PP_visual_051" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+          <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.96 0.2688 0.3861680928 1" mesh="piece_043_right_ring_PP_hull_000" name="piece_043_right_ring_PP_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+          <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.3168 0.576772806 0.88 1" mesh="piece_044_right_ring_PP_hull_000" name="piece_044_right_ring_PP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+        </body>
+        <geom name="right_ring_MCP_VL_visual_044" type="mesh" mesh="right_ring_MCP_VL_visual_044" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+        <geom name="right_ring_MCP_VL_visual_045" type="mesh" mesh="right_ring_MCP_VL_visual_045" contype="0" conaffinity="0" group="1" density="0" material="material_02" />
+        <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.96 0.7565002328 0.2688 1" mesh="piece_040_right_ring_MCP_VL_hull_000" name="piece_040_right_ring_MCP_VL_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      </body>
+      <body name="right_pinky_MC" pos="0.01136 -0.0263 0.0869" quat="-3.67321e-06 0 0 1">
+        <inertial pos="0.0107985 0.00598801 -0.0335125" quat="0.706956 -0.000832392 -0.0268047 0.706749" mass="0.12541" diaginertia="4.47765e-05 3.72569e-05 1.69876e-05" />
+        <joint name="right_pinky_CMC" pos="0 0 0" axis="0 0 1" range="0 0.2618" class="PCMC_joint" />
+        <body name="right_pinky_MCP_VL" pos="0.00836 0.0048 0" quat="0.499998 0.5 -0.5 0.500002">
+          <inertial pos="-0.0092 0.0013 0" quat="0.519686 0.479506 -0.519686 0.479506" mass="0.00221" diaginertia="2.23e-07 1.77435e-07 1.09965e-07" />
+          <joint name="right_pinky_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.17453293 1.5708" class="MCP_joint" />
+          <body name="right_pinky_PP" quat="0.707105 -0.707108 0 0">
+            <inertial pos="0.027 0.00055 0.00068" quat="0.512565 0.504813 0.502719 0.479286" mass="0.04741" diaginertia="1.14061e-05 1.10467e-05 2.15425e-06" />
+            <joint name="right_pinky_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" class="MCP_joint" />
+            <body name="right_pinky_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+              <inertial pos="0.01212 -0.00116 0.00058" quat="-0.0266408 0.732558 -0.0189273 0.67992" mass="0.01824" diaginertia="2.00683e-06 1.9229e-06 5.68878e-07" />
+              <joint name="right_pinky_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" class="PIP_joint" />
+              <body name="right_pinky_DP" pos="0.0315 0 0">
+                <inertial pos="0.0124885 -0.00257289 -0.000107611" quat="-0.0492916 0.716628 -0.0583643 0.693259" mass="0.004651" diaginertia="3.15336e-07 3.09757e-07 1.34861e-07" />
+                <joint name="right_pinky_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" class="DIP_joint" />
+                <geom name="right_pinky_DP_visual_027" type="mesh" mesh="right_pinky_DP_visual_027" contype="0" conaffinity="0" group="1" density="0" material="material_10" />
+                <geom name="right_pinky_DP_visual_028" type="mesh" mesh="right_pinky_DP_visual_028" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+                <geom name="right_pinky_DP_visual_029" type="mesh" mesh="right_pinky_DP_visual_029" contype="0" conaffinity="0" group="1" density="0" material="material_11" />
+                <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.2688 0.7306947905 0.96 1" mesh="piece_031_right_pinky_DP_hull_000" name="piece_031_right_pinky_DP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+                <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.2688 0.8189730695 0.96 1" mesh="piece_052_right_pinky_elastomer_elastomer_000" name="piece_052_right_pinky_elastomer_elastomer_000" class="elastomer_geom" density="0" friction="0.8 0.005 0.0001" condim="4" />
+              </body>
+              <geom name="right_pinky_MP_visual_035" type="mesh" mesh="right_pinky_MP_visual_035" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+              <geom name="right_pinky_MP_visual_036" type="mesh" mesh="right_pinky_MP_visual_036" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+              <geom name="right_pinky_MP_visual_037" type="mesh" mesh="right_pinky_MP_visual_037" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+              <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.88 0.4094831009 0.3168 1" mesh="piece_035_right_pinky_MP_hull_000" name="piece_035_right_pinky_MP_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+              <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.1332 0.2104037116 0.74 1" mesh="piece_036_right_pinky_MP_hull_000" name="piece_036_right_pinky_MP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+            </body>
+            <geom name="right_pinky_PP_visual_038" type="mesh" mesh="right_pinky_PP_visual_038" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+            <geom name="right_pinky_PP_visual_039" type="mesh" mesh="right_pinky_PP_visual_039" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+            <geom name="right_pinky_PP_visual_040" type="mesh" mesh="right_pinky_PP_visual_040" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+            <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.5584314417 0.96 0.2688 1" mesh="piece_037_right_pinky_PP_hull_000" name="piece_037_right_pinky_PP_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+            <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.88 0.3168 0.7171355347 1" mesh="piece_038_right_pinky_PP_hull_000" name="piece_038_right_pinky_PP_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+          </body>
+          <geom name="right_pinky_MCP_VL_visual_033" type="mesh" mesh="right_pinky_MCP_VL_visual_033" contype="0" conaffinity="0" group="1" density="0" material="material_07" />
+          <geom name="right_pinky_MCP_VL_visual_034" type="mesh" mesh="right_pinky_MCP_VL_visual_034" contype="0" conaffinity="0" group="1" density="0" material="material_02" />
+          <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.2688 0.96 0.5842368839 1" mesh="piece_034_right_pinky_MCP_VL_hull_000" name="piece_034_right_pinky_MCP_VL_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+        </body>
+        <geom name="right_pinky_MC_visual_030" type="mesh" mesh="right_pinky_MC_visual_030" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+        <geom name="right_pinky_MC_visual_031" type="mesh" mesh="right_pinky_MC_visual_031" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+        <geom name="right_pinky_MC_visual_032" type="mesh" mesh="right_pinky_MC_visual_032" contype="0" conaffinity="0" group="1" density="0" material="material_02" />
+        <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.8574982634 0.88 0.3168 1" mesh="piece_032_right_pinky_MC_hull_000" name="piece_032_right_pinky_MC_hull_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+        <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.5871818496 0.1332 0.74 1" mesh="piece_033_right_pinky_MC_hull_000" name="piece_033_right_pinky_MC_hull_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      </body>
+      <geom name="right_hand_C_MC_visual_000" type="mesh" mesh="right_hand_C_MC_visual_000" contype="0" conaffinity="0" group="1" density="0" material="material_00" />
+      <geom name="right_hand_C_MC_visual_001" type="mesh" mesh="right_hand_C_MC_visual_001" contype="0" conaffinity="0" group="1" density="0" material="material_01" />
+      <geom name="right_hand_C_MC_visual_002" type="mesh" mesh="right_hand_C_MC_visual_002" contype="0" conaffinity="0" group="1" density="0" material="material_02" />
+      <geom name="right_hand_C_MC_visual_003" type="mesh" mesh="right_hand_C_MC_visual_003" contype="0" conaffinity="0" group="1" density="0" material="material_03" />
+      <geom name="right_hand_C_MC_visual_004" type="mesh" mesh="right_hand_C_MC_visual_004" contype="0" conaffinity="0" group="1" density="0" material="material_04" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.88 0.553344 0.3168 1" mesh="piece_000_right_hand_C_MC_gray_002_shell_000" name="piece_000_right_hand_C_MC_gray_002_shell_000" density="0" friction="0.6 0.005 0.0001" condim="4" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.2109941462 0.1332 0.74 1" mesh="piece_001_right_hand_C_MC_gray_002_shell_001" name="piece_001_right_hand_C_MC_gray_002_shell_001" density="0" friction="0.6 0.005 0.0001" condim="4" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.3818748837 0.96 0.2688 1" mesh="piece_002_right_hand_C_MC_gray_002_shell_002" name="piece_002_right_hand_C_MC_gray_002_shell_002" density="0" friction="0.6 0.005 0.0001" condim="4" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.88 0.3168 0.5732746356 1" mesh="piece_003_right_hand_C_MC_gray_002_shell_003" name="piece_003_right_hand_C_MC_gray_002_shell_003" density="0" friction="0.6 0.005 0.0001" condim="4" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.1332 0.586591415 0.74 1" mesh="piece_004_right_hand_C_MC_gray_002_shell_004" name="piece_004_right_hand_C_MC_gray_002_shell_004" density="0" friction="0.6 0.005 0.0001" condim="4" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.96 0.9330567907 0.2688 1" mesh="piece_005_right_hand_C_MC_gray_002_shell_005" name="piece_005_right_hand_C_MC_gray_002_shell_005" density="0" friction="0.6 0.005 0.0001" condim="4" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.6937067287 0.3168 0.88 1" mesh="piece_006_right_hand_C_MC_remaining_body_000" name="piece_006_right_hand_C_MC_remaining_body_000" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.1332 0.74 0.3622230237 1" mesh="piece_007_right_hand_C_MC_remaining_body_001" name="piece_007_right_hand_C_MC_remaining_body_001" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.96 0.3279884652 0.2688 1" mesh="piece_008_right_hand_C_MC_remaining_body_002" name="piece_008_right_hand_C_MC_remaining_body_002" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.3168 0.4329119069 0.88 1" mesh="piece_009_right_hand_C_MC_remaining_body_003" name="piece_009_right_hand_C_MC_remaining_body_003" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.4353625376 0.74 0.1332 1" mesh="piece_010_right_hand_C_MC_remaining_body_004" name="piece_010_right_hand_C_MC_remaining_body_004" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.74 0.5134519011 0.1332 1" mesh="piece_011_right_hand_C_MC_remaining_body_007" name="piece_011_right_hand_C_MC_remaining_body_007" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.2688 0.6424165116 0.96 1" mesh="piece_012_right_hand_C_MC_remaining_body_011" name="piece_012_right_hand_C_MC_remaining_body_011" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.7855678139 0.88 0.3168 1" mesh="piece_013_right_hand_C_MC_remaining_body_012" name="piece_013_right_hand_C_MC_remaining_body_012" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.1334952173 0.1332 0.74 1" mesh="piece_014_right_hand_C_MC_remaining_body_016" name="piece_014_right_hand_C_MC_remaining_body_016" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.4701531627 0.96 0.2688 1" mesh="piece_015_right_hand_C_MC_remaining_body_017" name="piece_015_right_hand_C_MC_remaining_body_017" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.88 0.3168 0.6452050852 1" mesh="piece_016_right_hand_C_MC_remaining_body_018" name="piece_016_right_hand_C_MC_remaining_body_018" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.1332 0.664090344 0.74 1" mesh="piece_017_right_hand_C_MC_remaining_body_019" name="piece_017_right_hand_C_MC_remaining_body_019" density="0" friction="0.1 0.005 0.0001" condim="3" />
+      <geom type="mesh" contype="1" conaffinity="1" group="3" rgba="0.97 0.45 0.08 1" mesh="piece_018_right_hand_C_MC_remaining_body_020" name="piece_018_right_hand_C_MC_remaining_body_020" density="0" friction="0.1 0.005 0.0001" condim="3" />
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="right_thumb_CMC_FE_ctrl" joint="right_thumb_CMC_FE" kp="6.95" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_thumb_CMC_AA_ctrl" joint="right_thumb_CMC_AA" kp="13.2" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_thumb_MCP_FE_ctrl" joint="right_thumb_MCP_FE" kp="4.76" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_thumb_MCP_AA_ctrl" joint="right_thumb_MCP_AA" kp="6.62" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_thumb_IP_ctrl" joint="right_thumb_IP" kp="0.9" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_index_MCP_FE_ctrl" joint="right_index_MCP_FE" kp="4.76" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_index_MCP_AA_ctrl" joint="right_index_MCP_AA" kp="6.62" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_index_PIP_ctrl" joint="right_index_PIP" kp="0.9" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_index_DIP_ctrl" joint="right_index_DIP" kp="0.9" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_middle_MCP_FE_ctrl" joint="right_middle_MCP_FE" kp="4.76" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_middle_MCP_AA_ctrl" joint="right_middle_MCP_AA" kp="6.62" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_middle_PIP_ctrl" joint="right_middle_PIP" kp="0.9" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_middle_DIP_ctrl" joint="right_middle_DIP" kp="0.9" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_ring_MCP_FE_ctrl" joint="right_ring_MCP_FE" kp="4.76" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_ring_MCP_AA_ctrl" joint="right_ring_MCP_AA" kp="6.62" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_ring_PIP_ctrl" joint="right_ring_PIP" kp="0.9" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_ring_DIP_ctrl" joint="right_ring_DIP" kp="0.9" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_pinky_CMC_ctrl" joint="right_pinky_CMC" kp="1.38" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_pinky_MCP_FE_ctrl" joint="right_pinky_MCP_FE" kp="4.76" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_pinky_MCP_AA_ctrl" joint="right_pinky_MCP_AA" kp="6.62" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_pinky_PIP_ctrl" joint="right_pinky_PIP" kp="0.9" dampratio="0.9" inheritrange="1.0" />
+    <position name="right_pinky_DIP_ctrl" joint="right_pinky_DIP" kp="0.9" dampratio="0.9" inheritrange="1.0" />
+  </actuator>
+  <contact>
+    <exclude body1="right_hand_C_MC" body2="right_thumb_CMC_VL" />
+    <exclude body1="right_hand_C_MC" body2="right_hand_C_MC" />
+    <exclude body1="right_hand_C_MC" body2="right_thumb_MC" />
+    <exclude body1="right_thumb_MC" body2="right_thumb_MCP_VL" />
+    <exclude body1="right_thumb_MC" body2="right_thumb_PP" />
+    <exclude body1="right_thumb_MCP_VL" body2="right_thumb_PP" />
+    <exclude body1="right_thumb_PP" body2="right_thumb_DP" />
+    <exclude body1="right_hand_C_MC" body2="right_index_MCP_VL" />
+    <exclude body1="right_hand_C_MC" body2="right_index_PP" />
+    <exclude body1="right_index_MCP_VL" body2="right_index_PP" />
+    <exclude body1="right_index_PP" body2="right_index_MP" />
+    <exclude body1="right_index_MP" body2="right_index_DP" />
+    <exclude body1="right_hand_C_MC" body2="right_middle_MCP_VL" />
+    <exclude body1="right_hand_C_MC" body2="right_middle_PP" />
+    <exclude body1="right_middle_MCP_VL" body2="right_middle_PP" />
+    <exclude body1="right_middle_PP" body2="right_middle_MP" />
+    <exclude body1="right_middle_MP" body2="right_middle_DP" />
+    <exclude body1="right_hand_C_MC" body2="right_ring_MCP_VL" />
+    <exclude body1="right_hand_C_MC" body2="right_ring_PP" />
+    <exclude body1="right_ring_MCP_VL" body2="right_ring_PP" />
+    <exclude body1="right_ring_PP" body2="right_ring_MP" />
+    <exclude body1="right_ring_MP" body2="right_ring_DP" />
+    <exclude body1="right_hand_C_MC" body2="right_pinky_MC" />
+    <exclude body1="right_pinky_MC" body2="right_pinky_MCP_VL" />
+    <exclude body1="right_pinky_MC" body2="right_pinky_PP" />
+    <exclude body1="right_pinky_MCP_VL" body2="right_pinky_PP" />
+    <exclude body1="right_pinky_PP" body2="right_pinky_MP" />
+    <exclude body1="right_pinky_MP" body2="right_pinky_DP" />
+  </contact>
+  <visual>
+    <global offwidth="1200" offheight="1000" />
+    <headlight ambient="0.25 0.25 0.25" diffuse="0.65 0.65 0.65" specular="0.5 0.5 0.5" />
+  </visual>
+</mujoco>
